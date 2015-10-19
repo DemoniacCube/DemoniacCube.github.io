@@ -55,7 +55,7 @@
 <meta property="og:image" content="http://pic.ffsky.net/images/2015/10/19/6ead31bc82bdbb63834a42e778e16ef1.jpg">
 <meta property="og:image" content="http://pic.ffsky.net/images/2015/10/19/9bc07467f418f5f9306d4d9419e770fe.jpg">
 <meta property="og:image" content="http://pic.ffsky.net/images/2015/10/19/f8b7ffa24a83cccb4cee10853aaf8905.jpg">
-<meta property="og:updated_time" content="2015-10-19T11:34:37.210Z">
+<meta property="og:updated_time" content="2015-10-19T11:49:01.328Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo+github搭建独立博客简易教程">
 <meta name="twitter:description" content="前言作为第一篇文章，应当写些什么呢？还是把这个网站是如何搭建的说说吧，以后工作了，可能就没时间写了。
@@ -201,7 +201,7 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-10-19T19:34:37+08:00" content="2015-10-19">
+          <time itemprop="dateCreated" datetime="2015-10-19T19:49:01+08:00" content="2015-10-19">
             2015-10-19
           </time>
         </span>
@@ -230,7 +230,8 @@
       
         <span itemprop="articleBody"><h2 id="前言">前言</h2><p>作为第一篇文章，应当写些什么呢？还是把这个网站是如何搭建的说说吧，以后工作了，可能就没时间写了。</p>
 <p>一直想有一个属于自己的小窝，在上面记叙自己的故事。从QQ空间到新浪、网易博客，接着又流浪过博客园和csdn。但都不是很满意，他们不是自定义内容过少就是漂亮的皮肤需要收费，总之就是可制定内容过于局限。</p>
-<p>想做一个漂亮简介的网页布局，而我又拥有最高权限。把自己的生活记录下来，把自己的所思所想编译成文字，把自己的所学分享出来。<br><a id="more"></a></p>
+<p>想做一个漂亮简介的网页布局，而我又拥有最高权限。把自己的生活记录下来，把自己的所思所想编译成文字，把自己的所学分享出来。</p>
+<a id="more"></a>
 <p>那么为什么想写博客呢？这种已经过时了的东西。记录生活微博、qq、微信不都可以吗？干嘛那么麻烦呢？最初看博客是在学unity和C#语言的时候，不懂的地方得益于他人的技术博客，于是自己也尝试着写关于unity的博客，在写的过程中感觉到写博客的益处多多。用四个字概括就是利人利己。</p>
 <blockquote>
 <p>Reading makes a full man,conference a ready man,and writing an exact man.<br>阅读使人充实，交谈使人机智，写作使人精确。</p>
@@ -240,11 +241,14 @@
 <p>但幸运的是，最终我成功了。下面就分享一下我的经验。</p>
 <h2 id="知识准备">知识准备</h2><p>可能你并不知道什么是git，什么是github，什么又是hexo……但其实如果只是想搭建一个博客，即使你什么都不知道也没关系，只要你跟着步骤一步一步来就可以搭建自己的博客了，然后选择你喜欢的主题，学一下几分钟就能学会的markdown，就可以写文章了。这并不是什么很困难的事。</p>
 <p>当然，可能也有一些人想了解一下这些名词的意思，同时自己也做一下记录总结。下面给出了这些名词解释的链接：</p>
-<h4 id="什么是git"><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/" target="_blank" rel="external">什么是git</a></h4><h4 id="什么是github"><a href="http://www.worldhello.net/gotgithub/" target="_blank" rel="external">什么是github</a></h4><h4 id="什么是Github_Pages（请看*一、Github_Pages_是什么？部分）"><a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank" rel="external">什么是Github Pages</a>（请看<strong>*一、Github Pages 是什么？</strong>部分）</h4><h4 id="什么是Hexo">什么是Hexo</h4><p>Hexo是一个开源的静态博客生成器,用node.js开发,作者是台湾大学生tommy351。</p>
+<p><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/" target="_blank" rel="external"><strong>什么是git</strong></a></p>
+<p><a href="http://www.worldhello.net/gotgithub/" target="_blank" rel="external"><strong>什么是github</strong></a></p>
+<p><a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank" rel="external"><strong>什么是Github Pages</strong></a>（请看<strong>*一、Github Pages 是什么？</strong>部分）</p>
+<p><strong>什么是Hexo:</strong>Hexo是一个开源的静态博客生成器,用node.js开发,作者是台湾大学生tommy351。</p>
 <h2 id="如何搭建自己的博客">如何搭建自己的博客</h2><p><strong>注意：</strong>此教程针对window用户，Linux和mac用户可以参阅<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">hexo文档</a></p>
-<h3 id="一、搭建hexo环境">一、搭建hexo环境</h3><h4 id="1-1_安装Node-js">1.1 安装Node.js</h4><p><a href="https://nodejs.org/en/" target="_blank" rel="external">下载并安装Node.js</a></p>
-<h4 id="1-2_安装git">1.2 安装git</h4><p><a href="http://git-scm.com/download/win" target="_blank" rel="external">下载并安装git</a><br><a href="http://jingyan.baidu.com/article/7f766dafba84f04101e1d0b0.html" target="_blank" rel="external">安装git的步骤</a></p>
-<h4 id="1-3_安装Hexo">1.3 安装Hexo</h4><p>在你喜欢的文件夹下创建一个路径（我的路径是：E:\Project\Blog），在空白处右击鼠标，选择<em>Git bash</em><br><img src="http://pic.ffsky.net/images/2015/10/19/4428f79d691d6be0145fff022fb33408.jpg" alt=""></p>
+<h3 id="搭建hexo环境">搭建hexo环境</h3><h4 id="安装Node-js">安装Node.js</h4><p><a href="https://nodejs.org/en/" target="_blank" rel="external">下载并安装Node.js</a></p>
+<h4 id="安装git">安装git</h4><p><a href="http://git-scm.com/download/win" target="_blank" rel="external">下载并安装git</a><br><a href="http://jingyan.baidu.com/article/7f766dafba84f04101e1d0b0.html" target="_blank" rel="external">安装git的步骤</a></p>
+<h4 id="安装Hexo">安装Hexo</h4><p>在你喜欢的文件夹下创建一个路径（我的路径是：E:\Project\Blog），在空白处右击鼠标，选择<em>Git bash</em><br><img src="http://pic.ffsky.net/images/2015/10/19/4428f79d691d6be0145fff022fb33408.jpg" alt=""></p>
 <p>输入下面的代码</p>
 <pre><code>npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> hexo
 hexo init
@@ -255,9 +259,9 @@ hexo <span class="keyword">server</span>
 </code></pre><p>现在，在浏览器中输入<code>http://localhost:4000/</code>看看效果如何吧。<br>或者<a href="http://localhost:4000/" target="_blank" rel="external">点击这里</a></p>
 <p>现在是不是有点小惊喜，终于看到页面了，有木有~但别高兴太早，这只是本地的，也就是说别人是看不见的。接下来，我们就把这个本地的网页部署到github上去。</p>
 <p><strong>note：</strong>用复制的快捷键<code>ctrl+c</code>可以断开localhost:4000</p>
-<h3 id="二、部署到github">二、部署到github</h3><h4 id="2-1_注册github账号">2.1 注册github账号</h4><p>在github官网上进行注册（github在国内墙不墙的问题也是有一段历史的），<a href="https://github.com/" target="_blank" rel="external">点击此处注册</a></p>
+<h3 id="部署到github">部署到github</h3><h4 id="注册github账号">注册github账号</h4><p>在github官网上进行注册（github在国内墙不墙的问题也是有一段历史的），<a href="https://github.com/" target="_blank" rel="external">点击此处注册</a></p>
 <p><strong>note:</strong>注册名关系到你的网站域名，建议填写你喜欢的名字</p>
-<h4 id="2-2_配置ssh_keys">2.2 配置ssh keys</h4><p>ssh keys的设置方面我参考的是<a href="http://beiyuu.com/github-pages/" target="_blank" rel="external">这篇博客</a></p>
+<h4 id="配置ssh_keys">配置ssh keys</h4><p>ssh keys的设置方面我参考的是<a href="http://beiyuu.com/github-pages/" target="_blank" rel="external">这篇博客</a></p>
 <p>他是用github+jekyll完成的，不过你可以参考他的配置和使用Github部分，确实很详细，包括ssh key验证是否成功（我也偷个懒，O(∩_∩)O哈哈~）</p>
 <p><strong>note：</strong></p>
 <ol>
@@ -267,13 +271,13 @@ hexo <span class="keyword">server</span>
 </li>
 <li>在得到ssh keys时，github会发一封邮件，请注意查收</li>
 </ol>
-<h4 id="2-3_创建repository">2.3 创建repository</h4><p>好的，如果前面都还顺利的话，接着就是创建一个仓库了，github页面的右上角，头像旁边的+号，点击后有个new repository选项，点击后如下图：<br><img src="http://pic.ffsky.net/images/2015/10/19/6ead31bc82bdbb63834a42e778e16ef1.jpg" alt=""><br>我已经创建好了，所以名字相同会报错。<br><strong>note：</strong></p>
+<h4 id="创建repository">创建repository</h4><p>好的，如果前面都还顺利的话，接着就是创建一个仓库了，github页面的右上角，头像旁边的+号，点击后有个new repository选项，点击后如下图：<br><img src="http://pic.ffsky.net/images/2015/10/19/6ead31bc82bdbb63834a42e778e16ef1.jpg" alt=""><br>我已经创建好了，所以名字相同会报错。<br><strong>note：</strong></p>
 <ol>
 <li>Github Pages的Repository名字是特定的，比如我Github账号是DemoniacCube，那么我的Repository name就是DemoniacCube.github.io</li>
 <li>注意大小写，你的名字是什么就填什么。其他仓库名字可以随便取，但这个特殊的仓库必须这样。当博客搭建好后，这个仓库会自己创建一个Github Pages（在该仓库的setting中可以查看），所以你在其他教程中似乎看不到用了Github Pages。</li>
 </ol>
 <p>名字填好以后点击Create repository，其他的默认就可以了。</p>
-<h4 id="2-4_修改_config-yml文件">2.4 修改_config.yml文件</h4><p>OK，这一切都顺利完成的话，就可以编辑<code>_config.yml</code>文件了。<br><img src="http://pic.ffsky.net/images/2015/10/19/9bc07467f418f5f9306d4d9419e770fe.jpg" alt=""><br>在你创建的根目录下（我的是<code>E:\Project\Blog</code>）找到<code>_config.yml</code>文件，如果你的电脑没有代码编辑器的话，可以用记事本打开。在代码的最后修改代码如下</p>
+<h4 id="修改_config-yml文件">修改_config.yml文件</h4><p>OK，这一切都顺利完成的话，就可以编辑<code>_config.yml</code>文件了。<br><img src="http://pic.ffsky.net/images/2015/10/19/9bc07467f418f5f9306d4d9419e770fe.jpg" alt=""><br>在你创建的根目录下（我的是<code>E:\Project\Blog</code>）找到<code>_config.yml</code>文件，如果你的电脑没有代码编辑器的话，可以用记事本打开。在代码的最后修改代码如下</p>
 <pre><code><span class="attribute">deploy</span>: 
   <span class="attribute">type</span>: git
   <span class="attribute">repository</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:yourname/yourname.github.io.git
@@ -285,17 +289,17 @@ hexo <span class="keyword">server</span>
 <li><code>repository: git@github.com:yourname/yourname.github.io.git</code>用到的就是ssh key值，如果ssh配置不正确会提交不上去</li>
 <li>repository: 后面的值其实并不需要你自己敲，可以通过复制仓库的ssh或者http(这也就是为什么上面要设置ssh值了，如果不用ssh，而用http的话，或许不需要设置ssh，由于ssh速度更快一些，我一直都用ssh的，如果你有兴趣，也可以试试http)，如下图所示：<br><img src="http://pic.ffsky.net/images/2015/10/19/f8b7ffa24a83cccb4cee10853aaf8905.jpg" alt=""></li>
 </ol>
-<h4 id="2-5_部署到Github">2.5 部署到Github</h4><p>到这里，我们所有的本地工作都做好了，就等着提交了。如果之前你的git bash关闭了。你需要在你当时创建的根目录下（我的是<code>E:\Project\Blog</code>），再次右击鼠标选择<em>git bash hear</em>并输入下面的代码：</p>
+<h4 id="部署到Github">部署到Github</h4><p>到这里，我们所有的本地工作都做好了，就等着提交了。如果之前你的git bash关闭了。你需要在你当时创建的根目录下（我的是<code>E:\Project\Blog</code>），再次右击鼠标选择<em>git bash hear</em>并输入下面的代码：</p>
 <pre><code><span class="title">hexo</span> generate
 hexo deploy
 </code></pre><p>wonderful！我们的博客已经搭建完成了~，在浏览器中输入<code>yourname.github.io</code>看看你的成果吧！</p>
-<h4 id="2-6_更换皮肤">2.6 更换皮肤</h4><p>hexo中提供了很多主题，如果你不喜欢自带的主题，可以clone那些主题来改变默认的主题。</p>
-<h5 id="下载主题">下载主题</h5><p><a href="https://hexo.io/themes/" target="_blank" rel="external">点击进入hexo主题</a>,选择你喜欢的主题。（github上还有其他作品，你可以找找看）<br>比如你选择了第三个主题<strong><em>Hueman</em></strong>，选择<em>About</em>可以看到</p>
+<h4 id="更换皮肤">更换皮肤</h4><p>hexo中提供了很多主题，如果你不喜欢自带的主题，可以clone那些主题来改变默认的主题。</p>
+<h5 id="下载主题">下载主题</h5><p><a href="https://hexo.io/themes/" target="_blank" rel="external">点击进入hexo主题</a>,选择你喜欢的主题。(我用的是next主题)(github上还有其他作品，你可以找找看,)<br>比如你选择了第三个主题<strong><em>Hueman</em></strong>，选择<em>About</em>可以看到</p>
 <pre><code><span class="variable">$ </span>git clone <span class="symbol">https:</span>/<span class="regexp">/github.com/ppoffice</span><span class="regexp">/hexo-theme-hueman.git themes/hueman</span>
 </code></pre><h5 id="启用Hueman主题">启用Hueman主题</h5><p>在你创建的根目录下右击鼠标选择<em>git bash hear</em>并输入上面的代码。<br> 当下载完毕后，你会在<code>E:\Project\Blog\themes</code>里看到一个<code>hueman</code>的文件夹，这就是刚刚下载的主题。<br>修改<strong>站点文件_config.yml</strong>中的theme属性，默认是landscape，改为hueman<br><strong><em>ps: _config.yml有两个：根目录下的_config.yml叫站点文件；主题目录下的_config.yml叫主题文件</em></strong></p>
 <h5 id="验证主题是否启用">验证主题是否启用</h5><p>运行 hexo s –debug，并访问 <a href="http://localhost:4000，确保站点正确运行。" target="_blank" rel="external">http://localhost:4000，确保站点正确运行。</a></p>
 <h5 id="主题个性化">主题个性化</h5><p>每个主题都可以在<strong>主题文件_config.yml</strong>中修改相应属性，来实现主题的部分个性化，比如：语言、字体、图标等等。<br>当然这些修改只是在原有基础上的小修小补。如果你有能力也完全可以自己设计一个网页，让别人来fork你的。</p>
-<h3 id="三、常见错误">三、常见错误</h3><ol>
+<h3 id="常见错误">常见错误</h3><ol>
 <li><p>在github部署完成之后，马上访问可能出现404错误，这是正常的，最多等待十分钟左右就可以访问了。如果还不行，那很可能是 github 发送给你的验证邮件你没有打开看，验证后就没问题了。</p>
 </li>
 <li><p>如果在修改_config.yml文件时，出现乱码，请转码为<strong>utf-8</strong></p>
@@ -319,8 +323,7 @@ hexo <span class="keyword">n</span> == hexo new
 hexo <span class="keyword">g</span> == hexo <span class="keyword">generate</span>
 hexo s == hexo server
 hexo <span class="keyword">d</span> == hexo deploy
-</code></pre><p>### </p>
-</span>
+</code></pre></span>
       
     </div>
 
@@ -333,18 +336,6 @@ hexo <span class="keyword">d</span> == hexo deploy
         </div>
       
 
-      
-        <div class="post-nav">
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2015/10/17/hello-world/" rel="next">Hello World</a>
-            
-          </div>
-        </div>
       
 
       
@@ -407,7 +398,7 @@ hexo <span class="keyword">d</span> == hexo deploy
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">1</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -449,7 +440,7 @@ hexo <span class="keyword">d</span> == hexo deploy
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识准备"><span class="nav-number">2.</span> <span class="nav-text">知识准备</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是git"><span class="nav-number">2.0.1.</span> <span class="nav-text">什么是git</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是github"><span class="nav-number">2.0.2.</span> <span class="nav-text">什么是github</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是Github_Pages（请看*一、Github_Pages_是什么？部分）"><span class="nav-number">2.0.3.</span> <span class="nav-text">什么是Github Pages（请看*一、Github Pages 是什么？部分）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是Hexo"><span class="nav-number">2.0.4.</span> <span class="nav-text">什么是Hexo</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何搭建自己的博客"><span class="nav-number">3.</span> <span class="nav-text">如何搭建自己的博客</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、搭建hexo环境"><span class="nav-number">3.1.</span> <span class="nav-text">一、搭建hexo环境</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1_安装Node-js"><span class="nav-number">3.1.1.</span> <span class="nav-text">1.1 安装Node.js</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2_安装git"><span class="nav-number">3.1.2.</span> <span class="nav-text">1.2 安装git</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3_安装Hexo"><span class="nav-number">3.1.3.</span> <span class="nav-text">1.3 安装Hexo</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、部署到github"><span class="nav-number">3.2.</span> <span class="nav-text">二、部署到github</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1_注册github账号"><span class="nav-number">3.2.1.</span> <span class="nav-text">2.1 注册github账号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2_配置ssh_keys"><span class="nav-number">3.2.2.</span> <span class="nav-text">2.2 配置ssh keys</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3_创建repository"><span class="nav-number">3.2.3.</span> <span class="nav-text">2.3 创建repository</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4_修改_config-yml文件"><span class="nav-number">3.2.4.</span> <span class="nav-text">2.4 修改_config.yml文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5_部署到Github"><span class="nav-number">3.2.5.</span> <span class="nav-text">2.5 部署到Github</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-6_更换皮肤"><span class="nav-number">3.2.6.</span> <span class="nav-text">2.6 更换皮肤</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#下载主题"><span class="nav-number">3.2.6.1.</span> <span class="nav-text">下载主题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#启用Hueman主题"><span class="nav-number">3.2.6.2.</span> <span class="nav-text">启用Hueman主题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#验证主题是否启用"><span class="nav-number">3.2.6.3.</span> <span class="nav-text">验证主题是否启用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#主题个性化"><span class="nav-number">3.2.6.4.</span> <span class="nav-text">主题个性化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、常见错误"><span class="nav-number">3.3.</span> <span class="nav-text">三、常见错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附录"><span class="nav-number">4.</span> <span class="nav-text">附录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo常用命令"><span class="nav-number">4.1.</span> <span class="nav-text">hexo常用命令</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识准备"><span class="nav-number">2.</span> <span class="nav-text">知识准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何搭建自己的博客"><span class="nav-number">3.</span> <span class="nav-text">如何搭建自己的博客</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建hexo环境"><span class="nav-number">3.1.</span> <span class="nav-text">搭建hexo环境</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Node-js"><span class="nav-number">3.1.1.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装git"><span class="nav-number">3.1.2.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Hexo"><span class="nav-number">3.1.3.</span> <span class="nav-text">安装Hexo</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署到github"><span class="nav-number">3.2.</span> <span class="nav-text">部署到github</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注册github账号"><span class="nav-number">3.2.1.</span> <span class="nav-text">注册github账号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置ssh_keys"><span class="nav-number">3.2.2.</span> <span class="nav-text">配置ssh keys</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建repository"><span class="nav-number">3.2.3.</span> <span class="nav-text">创建repository</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改_config-yml文件"><span class="nav-number">3.2.4.</span> <span class="nav-text">修改_config.yml文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部署到Github"><span class="nav-number">3.2.5.</span> <span class="nav-text">部署到Github</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更换皮肤"><span class="nav-number">3.2.6.</span> <span class="nav-text">更换皮肤</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#下载主题"><span class="nav-number">3.2.6.1.</span> <span class="nav-text">下载主题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#启用Hueman主题"><span class="nav-number">3.2.6.2.</span> <span class="nav-text">启用Hueman主题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#验证主题是否启用"><span class="nav-number">3.2.6.3.</span> <span class="nav-text">验证主题是否启用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#主题个性化"><span class="nav-number">3.2.6.4.</span> <span class="nav-text">主题个性化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见错误"><span class="nav-number">3.3.</span> <span class="nav-text">常见错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附录"><span class="nav-number">4.</span> <span class="nav-text">附录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo常用命令"><span class="nav-number">4.1.</span> <span class="nav-text">hexo常用命令</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
