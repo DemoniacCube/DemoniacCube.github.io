@@ -39,28 +39,19 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="函数function FixedUpdate () : void  固定更新function Update () : void       更新
-相同部分当MonoBehaviour启用时，其在每一帧被调用。都是用来更新的
-不同点(1)Update()每一帧的时间不固定，即第一帧与第二帧的时间t1和第三帧与第四帧的时间t2不一定相同。比如：
-对于Update()123456789101112131">
+<meta name="description" content="函数function FixedUpdate () : void  固定更新function Update () : void       更新">
 <meta property="og:type" content="article">
 <meta property="og:title" content="FixedUpdate()与Update()的异同">
 <meta property="og:url" content="http://demoniaccube.github.io/2015/10/20/FixedUpdate-与Update-的异同/index.html">
 <meta property="og:site_name" content="Smallbo's Notes">
-<meta property="og:description" content="函数function FixedUpdate () : void  固定更新function Update () : void       更新
-相同部分当MonoBehaviour启用时，其在每一帧被调用。都是用来更新的
-不同点(1)Update()每一帧的时间不固定，即第一帧与第二帧的时间t1和第三帧与第四帧的时间t2不一定相同。比如：
-对于Update()123456789101112131">
+<meta property="og:description" content="函数function FixedUpdate () : void  固定更新function Update () : void       更新">
 <meta property="og:image" content="http://pic.ffsky.net/images/2015/10/20/10847e5c0f120696fbe6afaf198125d2.png">
 <meta property="og:image" content="http://pic.ffsky.net/images/2015/10/20/aad1cbc2f917e2fae9d0b7106feddf2a.png">
 <meta property="og:image" content="http://pic.ffsky.net/images/2015/10/20/fd67a9cb7aa79aaafea9adca8c1d8176.png">
-<meta property="og:updated_time" content="2015-10-20T02:28:33.570Z">
+<meta property="og:updated_time" content="2015-10-20T02:30:49.415Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="FixedUpdate()与Update()的异同">
-<meta name="twitter:description" content="函数function FixedUpdate () : void  固定更新function Update () : void       更新
-相同部分当MonoBehaviour启用时，其在每一帧被调用。都是用来更新的
-不同点(1)Update()每一帧的时间不固定，即第一帧与第二帧的时间t1和第三帧与第四帧的时间t2不一定相同。比如：
-对于Update()123456789101112131">
+<meta name="twitter:description" content="函数function FixedUpdate () : void  固定更新function Update () : void       更新">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -252,6 +243,7 @@
 
       
         <span itemprop="articleBody"><h2 id="函数">函数</h2><p>function FixedUpdate () : void  固定更新<br>function Update () : void       更新</p>
+<a id="more"></a>
 <h2 id="相同部分">相同部分</h2><p>当MonoBehaviour启用时，其在每一帧被调用。都是用来更新的</p>
 <h2 id="不同点(1)">不同点(1)</h2><p>Update()每一帧的时间不固定，即第一帧与第二帧的时间t1和第三帧与第四帧的时间t2不一定相同。比如：</p>
 <h3 id="对于Update()">对于Update()</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections;</span><br><span class="line">public class test : MonoBehaviour</span><br><span class="line">&#123;</span><br><span class="line">	int i = 0;</span><br><span class="line">	float time = 0f;</span><br><span class="line">	void Update ()</span><br><span class="line">	&#123;</span><br><span class="line">		i++;</span><br><span class="line">		time += Time.deltaTime;</span><br><span class="line">		Debug.Log("这是第"+ i + "帧");</span><br><span class="line">		Debug.Log("时间：" + time);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
