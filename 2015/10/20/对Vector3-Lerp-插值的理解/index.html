@@ -56,7 +56,7 @@
 <meta property="og:image" content="http://pic.ffsky.net/images/2015/10/20/9b7d59728490deb2bb335bfa4c6c5cf9.png">
 <meta property="og:image" content="http://pic.ffsky.net/images/2015/10/20/adff6437e4fee582dcb4ebc2d5dad777.png">
 <meta property="og:image" content="http://pic.ffsky.net/images/2015/10/20/7559db8dfaee8018a37a355e8e89a0fb.png">
-<meta property="og:updated_time" content="2015-10-20T04:29:14.075Z">
+<meta property="og:updated_time" content="2015-10-20T04:31:09.239Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="对Vector3.Lerp 插值的理解">
 <meta name="twitter:description" content="什么是插值对于刚接触unity的同学来说，插值可能是比较难理解的概念之一。插值：
@@ -258,7 +258,7 @@
 <blockquote>
 <p>在离散数据的基础上补插连续函数，使得这条连续曲线通过全部给定的离散数据点。插值是离散函数逼近的重要方法，利用它可通过函数在有限个点处的取值状况，估算出函数在其他点处的近似值。插值：用来填充图像变换时像素之间的空隙。</p>
 </blockquote>
-<p>以上是百度百科里的解释，感觉太官方话了。下面结合unity中的Vector3.Lerp具体的谈谈什么是插值，插值是如何计算的。</p>
+<p>以上是百度百科里的解释，感觉太官方话了。下面结合unity中的Vector3.Lerp具体的谈谈什么是插值，插值是如何计算的。<br><a id="more"></a></p>
 <h3 id="Vector3-Lerp">Vector3.Lerp</h3><h4 id="引导">引导</h4><p>有时，我们在做游戏时会发现有些跟随动作不够圆滑，这时，一般会考虑到插值。所以对插值的理解是必需的。比如摄像机跟随主角。当主角移动时，希望摄像机以一种线性或者非线性的速度跟随主角。那么，这个“以一种线性或者非线性的速度”就是用插值办到的。</p>
 <h4 id="计算公式">计算公式</h4><p>插值是数学上的一个概念，在这里用公式表示就是：<code>from + （to - from） * t</code>；这也就是Lerp的返回值（用这个公式分别算出x,y,z）。</p>
 <p><code>static function Lerp (from : Vector3, to : Vector3, t : float) : Vector3</code><br>from 是起始的位置，to是目标位置，按照数字t在from到to之间插值。这句话比较难理解，下面举个例子。</p>
