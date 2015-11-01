@@ -70,7 +70,7 @@
 <meta property="og:image" content="http://pic.ffsky.net/images/2015/10/31/f07b9ee5dfe1c901aba3502619086128.jpg">
 <meta property="og:image" content="http://pic.ffsky.net/images/2015/10/31/919d948dbe114b3d4a492b81e5f4b664.jpg">
 <meta property="og:image" content="http://pic.ffsky.net/images/2015/10/31/aba00e5d1738981b563cef0c0f321c93.jpg">
-<meta property="og:updated_time" content="2015-10-31T14:49:20.543Z">
+<meta property="og:updated_time" content="2015-11-01T02:31:56.182Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android笔记(一)Android基本控件与布局">
 <meta name="twitter:description" content="前言以后想要混移动端，还是要好好学学Android的。找了一些视频，感觉mars老师讲的不错，通俗易懂，条理清晰，非常适合入门。于是把视频中学习到的东西整理出来，方便以后复习。">
@@ -264,11 +264,11 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="前言">前言</h1><p>以后想要混移动端，还是要好好学学Android的。找了一些视频，感觉mars老师讲的不错，通俗易懂，条理清晰，非常适合入门。于是把视频中学习到的东西整理出来，方便以后复习。</p>
+        <span itemprop="articleBody"><h1 id="前言">前言</h1><p>以后想要混移动端，还是要好好学学Android的。找了一些视频，感觉<a href="http://study.163.com/course/courseMain.htm?courseId=207001" target="_blank" rel="external">mars老师</a>讲的不错，通俗易懂，条理清晰，非常适合入门。于是把视频中学习到的东西整理出来，方便以后复习。</p>
 <a id="more"></a>
-<h1 id="内容">内容</h1><h2 id="Android历史">Android历史</h2><p>Android的发展史可以参考<a href="http://blog.csdn.net/feiyangxiaomi/article/details/9665207" target="_blank" rel="external">这篇博客</a></p>
+<h1 id="内容">内容</h1><h2 id="Android历史">Android历史</h2><p>Android的发展史可以参考<a href="http://baike.baidu.com/link?url=aZ_qFp1VicRiL355pVdLyFWDVJfqDxmiPXgZJOqTz5dHKhGISdpAkomxooVMW4j0iFymBbgeYUiMSRwQjV_dVa" target="_blank" rel="external">百度百科</a></p>
 <h2 id="Android开发环境的搭建">Android开发环境的搭建</h2><p>我的Android开发环境是翻墙直接在安卓官网上下的。用的是Android Studio1.4版本；sdk文档是安卓6.0；Java是1.8版。这部分网上教程很多，也很简单。</p>
-<h2 id="Activity的概念">Activity的概念</h2><p>Activity是指app的某个界面，比如QQ的消息是一个Activity，跳转到联系人，又是一个Activity；在跳到空间动态又是一个Activity。如果后台有个东西下好了，弹出来一个窗口说东西下好了，那也是一个Activity。</p>
+<h2 id="Activity的概念">Activity的概念</h2><p>Activity是指app的某个界面，比如QQ的消息是一个Activity，跳转到联系人，又是一个Activity；在跳到空间动态又是一个Activity。如果后台有个东西下好了，弹出来一个窗口说东西下好了，那也是一个Activity。如果将网站比作安卓系统，那么一个Activity就好比一个网页。</p>
 <h2 id="文本框与按钮的使用">文本框与按钮的使用</h2><h3 id="Activity启动流程">Activity启动流程</h3><p><img src="http://pic.ffsky.net/images/2015/10/31/f77cf897bf63c3914494ccf939b5a88e.png" alt=""><br>要启动一个activity，Android系统会先读取AndroidManifest.xml文件，找到默认的activity，生成activity的对象，调用activity中的onCreate（）方法。onCreate方法读取activity_main.xml文件，然后在activity上显示内容。</p>
 <h3 id="Activity布局文件之间的关系">Activity布局文件之间的关系</h3><p><img src="http://pic.ffsky.net/images/2015/10/31/6071e464a8066d6b61f8d41e4c3ea1e0.png" alt=""><br>1、所有res文件夹中的.xml文件都会在gen文件夹的R.Java文件中生成ID；<br>2、R.layout.activity_main是布局文件的id。<br>3、SetContenView函数的作用是让当前的activity去显示在R.layout.activity_main布局文件中所定义的内容；<br>4、Activity显示的内容取决于activity_main.xml文件。</p>
 <h3 id="在Activity当中获取代表控件对象">在Activity当中获取代表控件对象</h3><p><img src="http://pic.ffsky.net/images/2015/10/31/d9e177b76b8cfb64138127f6c366f82f.png" alt=""><br>activity_main.xml文件里的布局代码是写死的，怎样显示的就怎样显示，写好了就不能更改。那么和客户互动的、实时变化的属性是怎么弄的呢？答案是用Java写的。在对应的Activity类中，实例化对应的属性，然后对类的实例化进行修改。</p>
@@ -393,6 +393,8 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2015/11/01/Android笔记（二）/" rel="prev">Android笔记（二）</a>
+            
           </div>
 
           <div class="post-nav-next post-nav-item">
@@ -463,7 +465,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
