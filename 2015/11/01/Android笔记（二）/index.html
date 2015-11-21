@@ -42,7 +42,7 @@
 <meta name="description" content="前言mars老师的视频只更新到第二季，从2015年开始就不再更新了。所以这部分笔记就只能记到第二季了。但是学习Android的步伐不会停下，后面可能会接着看mars重制版之前的视频或者看看慕课网、极客学院等关于安卓的知识。极客学院的那个讲安卓的老师讲的不好，说了半天不知道在说什么。看情况吧，之后还是会记笔记的，不过可能会和这部分内容衔接的不太好。
 在这季中，mars老师将UI、网络、线程等知识串着">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android笔记（二）">
+<meta property="og:title" content="Android笔记之Activity的生命周期">
 <meta property="og:url" content="http://demoniaccube.github.io/2015/11/01/Android笔记（二）/index.html">
 <meta property="og:site_name" content="Smallbo's Notes">
 <meta property="og:description" content="前言mars老师的视频只更新到第二季，从2015年开始就不再更新了。所以这部分笔记就只能记到第二季了。但是学习Android的步伐不会停下，后面可能会接着看mars重制版之前的视频或者看看慕课网、极客学院等关于安卓的知识。极客学院的那个讲安卓的老师讲的不好，说了半天不知道在说什么。看情况吧，之后还是会记笔记的，不过可能会和这部分内容衔接的不太好。
@@ -50,9 +50,9 @@
 <meta property="og:image" content="http://pic.ffsky.net/images/2015/11/01/b48186d96c3ecef53b329ce41905cfdd.jpg">
 <meta property="og:image" content="http://pic.ffsky.net/images/2015/11/01/954a72df2d28c363928b300a3d95f6d0.jpg">
 <meta property="og:image" content="http://pic.ffsky.net/images/2015/11/01/da8915db839eb763f02981de56897ff2.jpg">
-<meta property="og:updated_time" content="2015-11-02T08:09:07.879Z">
+<meta property="og:updated_time" content="2015-11-21T05:48:17.096Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android笔记（二）">
+<meta name="twitter:title" content="Android笔记之Activity的生命周期">
 <meta name="twitter:description" content="前言mars老师的视频只更新到第二季，从2015年开始就不再更新了。所以这部分笔记就只能记到第二季了。但是学习Android的步伐不会停下，后面可能会接着看mars重制版之前的视频或者看看慕课网、极客学院等关于安卓的知识。极客学院的那个讲安卓的老师讲的不好，说了半天不知道在说什么。看情况吧，之后还是会记笔记的，不过可能会和这部分内容衔接的不太好。
 在这季中，mars老师将UI、网络、线程等知识串着">
 
@@ -66,7 +66,7 @@
 
 
 
-  <title> Android笔记（二） | Smallbo's Notes </title>
+  <title> Android笔记之Activity的生命周期 | Smallbo's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -194,7 +194,7 @@
           
           
             
-              Android笔记（二）
+              Android笔记之Activity的生命周期
             
           
         </h1>
@@ -307,7 +307,6 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Button button;</span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line"></span><br><span class="line">        button = (Button)findViewById(R.id.button1);</span><br><span class="line">        button.setOnClickListener(<span class="keyword">new</span> ButtonListener());</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">ButtonListener</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnClickListener</span></span><br><span class="line">    </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="annotation">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span></span><br><span class="line">        </span>&#123;</span><br><span class="line">            Intent intent = <span class="keyword">new</span> Intent();</span><br><span class="line">            <span class="comment">//setClass函数的第一个参数是一个Context对象；</span></span><br><span class="line">            <span class="comment">//Context是一个类，Activity是Context类的子类，也就是说，所有的Activity对象，都可以向上转型为Context对象</span></span><br><span class="line">            intent.setClass(MainActivity.<span class="keyword">this</span>, Main2Activity.class);</span><br><span class="line">            <span class="comment">//setClass函数的第二个参数是一个Class对象，在当前场景下，需要跳转的那个Activity类的class对象</span></span><br><span class="line">            intent.putExtra(<span class="string">"com.demoniaccube.chobits.course_activity.Age"</span>, <span class="number">10</span>);<span class="comment">//传入数据</span></span><br><span class="line">            startActivity(intent);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>第二个Activity</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main2Activity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> TextView textView;</span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main2);</span><br><span class="line"></span><br><span class="line">        textView = (TextView)findViewById(R.id.text);</span><br><span class="line"></span><br><span class="line">        Intent intent = getIntent();<span class="comment">//返回激活这个Activity的intent</span></span><br><span class="line">        <span class="keyword">int</span> age = intent.getIntExtra(<span class="string">"com.demoniaccube.chobits.course_activity.Age"</span>, <span class="number">20</span>);</span><br><span class="line">        <span class="comment">//get<span class="label">XXXExtra中的XXX取决于传入的值的数据类型，比如这里的20是整型，就是getIntExtra()；</span></span></span><br><span class="line">        <span class="comment">//getIntExtra返回的是上一个intent传入的值，这里是在MainActivity中传入的10；</span></span><br><span class="line">        <span class="comment">// 如果上一个intent中并没有传入这样一个值，那么则返回设置的默认值20</span></span><br><span class="line">        System.out.println(age);<span class="comment">//这样就没问题</span></span><br><span class="line">        <span class="comment">//但是像下面这样就有问题了，报错：貌似是空指针；好像是布局的id和获取控件出来问题，但是改过来还是不行，好像没有重新载入的感觉。</span></span><br><span class="line">        <span class="comment">//textView = (TextView)findViewById(R.id.m_text);</span></span><br><span class="line">        <span class="comment">//textView.setText(age);</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><font color="red">居然报错！！！还是有问题滴。先继续，往后看看或许就明白为什么这里错了。</font></p>
 <h2 id="Android中的线程">Android中的线程</h2><h3 id="Main_Thread与Worker_Thread">Main Thread与Worker Thread</h3><p>主线程和其他工作线程；<br>UI都在主线程中；</p>
 <p><font color="red">关于线程方面的知识讲的比较浅，我也不是很了解，还需要查阅一些资料，这里先暂时这样记着吧。</font></p>
 <p>一个简单的实现一个线程的方法：</p>
@@ -336,7 +335,7 @@
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/10/29/Android笔记/" rel="next">Android笔记(一)Android基本控件与布局</a>
+              <a href="/2015/10/29/Android笔记/" rel="next">Android笔记之Android基本控件与布局</a>
             
           </div>
         </div>
@@ -362,7 +361,7 @@
           <div class="comments" id="comments">
             
               <div class="ds-thread" data-thread-key="2015/11/01/Android笔记（二）/"
-                   data-title="Android笔记（二）" data-url="http://demoniaccube.github.io/2015/11/01/Android笔记（二）/">
+                   data-title="Android笔记之Activity的生命周期" data-url="http://demoniaccube.github.io/2015/11/01/Android笔记（二）/">
               </div>
             
           </div>
@@ -402,7 +401,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

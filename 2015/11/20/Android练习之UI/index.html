@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="API,unity3d," />
+  <meta name="keywords" content="android," />
 
 
 
@@ -39,31 +39,22 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="什么是插值对于刚接触unity的同学来说，插值可能是比较难理解的概念之一。插值：
-
-在离散数据的基础上补插连续函数，使得这条连续曲线通过全部给定的离散数据点。插值是离散函数逼近的重要方法，利用它可通过函数在有限个点处的取值状况，估算出函数在其他点处的近似值。插值：用来填充图像变换时像素之间的空隙。
-
-以上是百度百科里的解释，感觉太官方话了。下面结合unity中的Vector3.Lerp具体的谈谈什">
+<meta name="description" content="使用TextView实现文字滚动效果两步：一、控件属性添加
+12345&amp;lt;包名.继承TextView的类名	android:singleLine=&quot;true&quot;	android:ellipsize=&quot;marquee&quot;	android:focusable=&quot;true&quot;	android:focusableInTouchMode=&quot;true&quot;/&amp;gt;
+二、新建一个类，继承TextView并重写isF">
 <meta property="og:type" content="article">
-<meta property="og:title" content="对Vector3.Lerp 插值的理解">
-<meta property="og:url" content="http://demoniaccube.github.io/2015/10/20/对Vector3-Lerp-插值的理解/index.html">
+<meta property="og:title" content="Android练习之UI">
+<meta property="og:url" content="http://demoniaccube.github.io/2015/11/20/Android练习之UI/index.html">
 <meta property="og:site_name" content="Smallbo's Notes">
-<meta property="og:description" content="什么是插值对于刚接触unity的同学来说，插值可能是比较难理解的概念之一。插值：
-
-在离散数据的基础上补插连续函数，使得这条连续曲线通过全部给定的离散数据点。插值是离散函数逼近的重要方法，利用它可通过函数在有限个点处的取值状况，估算出函数在其他点处的近似值。插值：用来填充图像变换时像素之间的空隙。
-
-以上是百度百科里的解释，感觉太官方话了。下面结合unity中的Vector3.Lerp具体的谈谈什">
-<meta property="og:image" content="http://pic.ffsky.net/images/2015/10/20/9b7d59728490deb2bb335bfa4c6c5cf9.png">
-<meta property="og:image" content="http://pic.ffsky.net/images/2015/10/20/adff6437e4fee582dcb4ebc2d5dad777.png">
-<meta property="og:image" content="http://pic.ffsky.net/images/2015/10/20/7559db8dfaee8018a37a355e8e89a0fb.png">
-<meta property="og:updated_time" content="2015-10-20T04:31:09.239Z">
+<meta property="og:description" content="使用TextView实现文字滚动效果两步：一、控件属性添加
+12345&amp;lt;包名.继承TextView的类名	android:singleLine=&quot;true&quot;	android:ellipsize=&quot;marquee&quot;	android:focusable=&quot;true&quot;	android:focusableInTouchMode=&quot;true&quot;/&amp;gt;
+二、新建一个类，继承TextView并重写isF">
+<meta property="og:updated_time" content="2015-11-21T05:49:18.551Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="对Vector3.Lerp 插值的理解">
-<meta name="twitter:description" content="什么是插值对于刚接触unity的同学来说，插值可能是比较难理解的概念之一。插值：
-
-在离散数据的基础上补插连续函数，使得这条连续曲线通过全部给定的离散数据点。插值是离散函数逼近的重要方法，利用它可通过函数在有限个点处的取值状况，估算出函数在其他点处的近似值。插值：用来填充图像变换时像素之间的空隙。
-
-以上是百度百科里的解释，感觉太官方话了。下面结合unity中的Vector3.Lerp具体的谈谈什">
+<meta name="twitter:title" content="Android练习之UI">
+<meta name="twitter:description" content="使用TextView实现文字滚动效果两步：一、控件属性添加
+12345&amp;lt;包名.继承TextView的类名	android:singleLine=&quot;true&quot;	android:ellipsize=&quot;marquee&quot;	android:focusable=&quot;true&quot;	android:focusableInTouchMode=&quot;true&quot;/&amp;gt;
+二、新建一个类，继承TextView并重写isF">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -75,7 +66,7 @@
 
 
 
-  <title> 对Vector3.Lerp 插值的理解 | Smallbo's Notes </title>
+  <title> Android练习之UI | Smallbo's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -203,7 +194,7 @@
           
           
             
-              对Vector3.Lerp 插值的理解
+              Android练习之UI
             
           
         </h1>
@@ -212,8 +203,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-10-20T11:33:19+08:00" content="2015-10-20">
-            2015-10-20
+          <time itemprop="dateCreated" datetime="2015-11-20T22:46:42+08:00" content="2015-11-20">
+            2015-11-20
           </time>
         </span>
 
@@ -222,8 +213,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Unity-API/" itemprop="url" rel="index">
-                  <span itemprop="name">Unity API</span>
+                <a href="/categories/Android/" itemprop="url" rel="index">
+                  <span itemprop="name">Android</span>
                 </a>
               </span>
 
@@ -238,8 +229,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/10/20/对Vector3-Lerp-插值的理解/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/20/对Vector3-Lerp-插值的理解/" itemprop="commentsCount"></span>
+              <a href="/2015/11/20/Android练习之UI/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/20/Android练习之UI/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -254,53 +245,10 @@
       
 
       
-        <span itemprop="articleBody"><h3 id="什么是插值">什么是插值</h3><p>对于刚接触unity的同学来说，插值可能是比较难理解的概念之一。<br><strong>插值：</strong></p>
-<blockquote>
-<p>在离散数据的基础上补插连续函数，使得这条连续曲线通过全部给定的离散数据点。插值是离散函数逼近的重要方法，利用它可通过函数在有限个点处的取值状况，估算出函数在其他点处的近似值。插值：用来填充图像变换时像素之间的空隙。</p>
-</blockquote>
-<p>以上是百度百科里的解释，感觉太官方话了。下面结合unity中的Vector3.Lerp具体的谈谈什么是插值，插值是如何计算的。<br><a id="more"></a></p>
-<h3 id="Vector3-Lerp">Vector3.Lerp</h3><h4 id="引导">引导</h4><p>有时，我们在做游戏时会发现有些跟随动作不够圆滑，这时，一般会考虑到插值。所以对插值的理解是必需的。比如摄像机跟随主角。当主角移动时，希望摄像机以一种线性或者非线性的速度跟随主角。那么，这个“以一种线性或者非线性的速度”就是用插值办到的。</p>
-<h4 id="计算公式">计算公式</h4><p>插值是数学上的一个概念，在这里用公式表示就是：<code>from + （to - from） * t</code>；这也就是Lerp的返回值（用这个公式分别算出x,y,z）。</p>
-<p><code>static function Lerp (from : Vector3, to : Vector3, t : float) : Vector3</code><br>from 是起始的位置，to是目标位置，按照数字t在from到to之间插值。这句话比较难理解，下面举个例子。</p>
-<h4 id="例一">例一</h4><pre><code>public class test : <span class="type">MonoBehaviour</span>
-{
-    <span class="type">Vector3</span> start = new <span class="type">Vector3</span>(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>);
-    <span class="type">Vector3</span> <span class="keyword">end</span> = new <span class="type">Vector3</span>(<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>);
-    <span class="type">Vector3</span> <span class="literal">result</span>;
-    <span class="type">void</span> <span class="type">Update</span> ()
-    {
-        <span class="literal">result</span> = vector3.<span class="type">Lerp</span>(start, <span class="keyword">end</span>, <span class="number">0</span>.<span class="number">5</span>f)
-        <span class="type">Debug</span>.<span class="type">Log</span>(<span class="literal">result</span>.<span class="type">ToString</span>());
-    }
-}
-</code></pre><p>结果：<br><img src="http://pic.ffsky.net/images/2015/10/20/9b7d59728490deb2bb335bfa4c6c5cf9.png" alt=""><br>这和我们用公式算出来的如出一辙。现在我们再看一个具体的例子</p>
-<h4 id="例二">例二</h4><pre><code>//在<span class="number">1</span>秒时间动画位置移动从from开始到to结束。（这是官方的例子）
-<span class="keyword">public</span> <span class="keyword">class</span> example:MonoBehaviour
-{
-    <span class="keyword">public</span> Transform start;
-    <span class="keyword">public</span> Transform <span class="keyword">end</span>;
-    void Update()
-    {
-        transform.<span class="keyword">position</span> = Vector3.Lerp(start.<span class="keyword">position</span>, <span class="keyword">end</span>.<span class="keyword">position</span>, Time.time)
-    }
-}
-</code></pre><p>结果：<br><img src="http://pic.ffsky.net/images/2015/10/20/adff6437e4fee582dcb4ebc2d5dad777.png" alt=""><br>位置移动从start开始到end结束，这好理解，但是为什么是1秒呢？<br>Time.time是从0开始随时间增加的。<br>例1的t是一个固定的值，返回一个固定的向量。此时t是变量，在不断增加。那么：</p>
-<p><strong><em>当Time.time = 0时</em></strong><br>—&gt;transform.position = start.position，位置没有变化；<br><strong><em>当Time.time从0趋向于1时</em></strong><br>—&gt;transform.position 不断接近start.position，该脚本是挂在start物体上的，所以start会不断靠近end。</p>
-<p>那么问题来了，当Time.time&gt;1的时候，会怎么样呢？<br>额(⊙o⊙)…<br>这应该不会发生。由上面的公式<code>from + （to - from） * t</code>可知，当t=1时，to - from = 0，此时t就无效了。</p>
-<p>例1是从<strong>静态</strong>角度看，例2是从<strong>动态</strong>角度看的（两个变量，一个是时间在变化，一个是位置在变化）。</p>
-<p>想一想例2，如果不是Time.time，而是0.5，会怎么样？（只看一个变量）<br><img src="http://pic.ffsky.net/images/2015/10/20/7559db8dfaee8018a37a355e8e89a0fb.png" alt=""><br>由图易知：A物体会不断以0.5的比例无限接近于B。当这个距离小于等于最小极限时，unity会当做0看待。此时就停下了。</p>
-<h3 id="思考一下">思考一下</h3><p>如果上面都理解了，那么看官方的第二个例子就没什么问题了，试一试吧！</p>
-<pre><code>//像弹簧一样跟随目标物体
-<span class="keyword">public</span> <span class="keyword">class</span> example : MonoBehaviour
-{
-    <span class="keyword">public</span> Transform <span class="type">target</span>;
-    <span class="keyword">public</span> <span class="built_in">float</span> smooth = <span class="number">5.</span>f;
-    void Update()
-    {
-        transform.<span class="keyword">position</span> = Vector3.Lerp(transform.<span class="keyword">position</span>, <span class="type">target</span>.<span class="keyword">position</span>, Time.deltaTime * smooth);
-    }
-}
-</code></pre></span>
+        <span itemprop="articleBody"><h2 id="使用TextView实现文字滚动效果">使用TextView实现文字滚动效果</h2><p>两步：<br>一、控件属性添加</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">包名.继承TextView的类名</span></span><br><span class="line">	<span class="attribute">android:singleLine</span>=<span class="value">"true"</span></span><br><span class="line">	<span class="attribute">android:ellipsize</span>=<span class="value">"marquee"</span></span><br><span class="line">	<span class="attribute">android:focusable</span>=<span class="value">"true"</span></span><br><span class="line">	<span class="attribute">android:focusableInTouchMode</span>=<span class="value">"true"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>二、新建一个类，继承TextView并重写isFocused方法，即修改为：返回true。</p>
+</span>
       
     </div>
 
@@ -308,9 +256,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/API/" rel="tag">#API</a>
-          
-            <a href="/tags/unity3d/" rel="tag">#unity3d</a>
+            <a href="/tags/android/" rel="tag">#android</a>
           
         </div>
       
@@ -319,13 +265,13 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/10/29/Android笔记/" rel="prev">Android笔记之Android基本控件与布局</a>
+              <a href="/2015/11/21/BaseAdapter适配器的使用与优化/" rel="prev">BaseAdapter适配器的使用与优化</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/10/20/FixedUpdate-与Update-的异同/" rel="next">FixedUpdate()与Update()的异同</a>
+              <a href="/2015/11/18/Android练习之活动/" rel="next"></a>
             
           </div>
         </div>
@@ -350,8 +296,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/10/20/对Vector3-Lerp-插值的理解/"
-                   data-title="对Vector3.Lerp 插值的理解" data-url="http://demoniaccube.github.io/2015/10/20/对Vector3-Lerp-插值的理解/">
+              <div class="ds-thread" data-thread-key="2015/11/20/Android练习之UI/"
+                   data-title="Android练习之UI" data-url="http://demoniaccube.github.io/2015/11/20/Android练习之UI/">
               </div>
             
           </div>
@@ -447,7 +393,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是插值"><span class="nav-number">1.</span> <span class="nav-text">什么是插值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vector3-Lerp"><span class="nav-number">2.</span> <span class="nav-text">Vector3.Lerp</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#引导"><span class="nav-number">2.1.</span> <span class="nav-text">引导</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算公式"><span class="nav-number">2.2.</span> <span class="nav-text">计算公式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#例一"><span class="nav-number">2.3.</span> <span class="nav-text">例一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#例二"><span class="nav-number">2.4.</span> <span class="nav-text">例二</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思考一下"><span class="nav-number">3.</span> <span class="nav-text">思考一下</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用TextView实现文字滚动效果"><span class="nav-number">1.</span> <span class="nav-text">使用TextView实现文字滚动效果</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
