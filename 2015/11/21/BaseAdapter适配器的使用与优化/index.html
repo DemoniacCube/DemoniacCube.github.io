@@ -47,7 +47,7 @@
 <meta property="og:description" content="LIstView缓存机制什么是数据适配器适配器是AdapterView视图（如ListView - 列表视图控件、Gallery - 缩略图浏览器控件、GridView - 网格控件、Spinner - 下拉列表控件、AutoCompleteTextView - 自动提示文本框、ExpandableListView - 支持展开/收缩功能的列表控件等）与数据之间的桥梁，用来处理数据并将数据绑定到A">
 <meta property="og:image" content="http://pic.ffsky.net/images/2015/11/21/7abd5d26983928aa1a5e87b373584d44.jpg">
 <meta property="og:image" content="http://pic.ffsky.net/images/2015/11/21/c0c8ee6d70d07ea3b421627ce8d1156b.jpg">
-<meta property="og:updated_time" content="2015-11-21T05:53:55.344Z">
+<meta property="og:updated_time" content="2015-11-21T06:04:19.905Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android笔记之BaseAdapter适配器的使用与优化">
 <meta name="twitter:description" content="LIstView缓存机制什么是数据适配器适配器是AdapterView视图（如ListView - 列表视图控件、Gallery - 缩略图浏览器控件、GridView - 网格控件、Spinner - 下拉列表控件、AutoCompleteTextView - 自动提示文本框、ExpandableListView - 支持展开/收缩功能的列表控件等）与数据之间的桥梁，用来处理数据并将数据绑定到A">
@@ -251,6 +251,12 @@
 <a id="more"></a>
 <p><img src="http://pic.ffsky.net/images/2015/11/21/7abd5d26983928aa1a5e87b373584d44.jpg" alt=""><br><em>BaseAdapter</em>一般的适配器基类可用于将数据绑定到listview、Gallery、GridView 、spinner、AutoCompleteTextView上，当然也可以绑定到ExpandableListView上<br>BaseExpandableListAdapter可扩展的适配器基类可用于将数据绑定到支持展开/收缩功能的列表控件ExpandableListView上，ExpandableListView继承自ListView<br>更多关于适配器的内容可参考<a href="http://www.cnblogs.com/bravestarrhu/archive/2012/05/04/2483179.html" target="_blank" rel="external">这篇文章</a></p>
 <h3 id="ListView的显示与缓存机制">ListView的显示与缓存机制</h3><p><img src="http://pic.ffsky.net/images/2015/11/21/c0c8ee6d70d07ea3b421627ce8d1156b.jpg" alt=""><br>ListView并不会一次把所有的数据都加载出来，而是只加载显示在屏幕上的数据。如图所示，当向上滑动屏幕，将Item1移除屏幕时，Item1被放入对象池中，原本在对象池中的Item8放到了Item7的下方。</p>
+<h3 id="BaseAdapter基本结构">BaseAdapter基本结构</h3><ol>
+<li><code>public int getCount():</code>适配器中数据集中<strong>数据的个数</strong>；</li>
+<li><code>public Object getItem(int position):</code>获取数据集中与指定索引对应的数据项；</li>
+<li><code>public long getItemId(int position):</code>获取指定对应数据项的ID；</li>
+<li><code>public View getView(int postion, View convertView, ViewGroup parent):</code>获取每一个Item的显示内容。</li>
+</ol>
 </span>
       
     </div>
@@ -394,7 +400,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#LIstView缓存机制"><span class="nav-number">1.</span> <span class="nav-text">LIstView缓存机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是数据适配器"><span class="nav-number">1.1.</span> <span class="nav-text">什么是数据适配器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ListView的显示与缓存机制"><span class="nav-number">1.2.</span> <span class="nav-text">ListView的显示与缓存机制</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#LIstView缓存机制"><span class="nav-number">1.</span> <span class="nav-text">LIstView缓存机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是数据适配器"><span class="nav-number">1.1.</span> <span class="nav-text">什么是数据适配器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ListView的显示与缓存机制"><span class="nav-number">1.2.</span> <span class="nav-text">ListView的显示与缓存机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BaseAdapter基本结构"><span class="nav-number">1.3.</span> <span class="nav-text">BaseAdapter基本结构</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
