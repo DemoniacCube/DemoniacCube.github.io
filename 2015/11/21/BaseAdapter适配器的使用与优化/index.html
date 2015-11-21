@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="android," />
 
 
 
@@ -39,18 +39,18 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="数据适配器——BaseAdapter什么是数据适配器适配器是AdapterView视图（如ListView - 列表视图控件、Gallery - 缩略图浏览器控件、GridView - 网格控件、Spinner - 下拉列表控件、AutoCompleteTextView - 自动提示文本框、ExpandableListView - 支持展开/收缩功能的列表控件等）与数据之间的桥梁，用来处理数据并将">
+<meta name="description" content="LIstView缓存机制什么是数据适配器适配器是AdapterView视图（如ListView - 列表视图控件、Gallery - 缩略图浏览器控件、GridView - 网格控件、Spinner - 下拉列表控件、AutoCompleteTextView - 自动提示文本框、ExpandableListView - 支持展开/收缩功能的列表控件等）与数据之间的桥梁，用来处理数据并将数据绑定到A">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BaseAdapter适配器的使用与优化">
+<meta property="og:title" content="Android笔记之BaseAdapter适配器的使用与优化">
 <meta property="og:url" content="http://demoniaccube.github.io/2015/11/21/BaseAdapter适配器的使用与优化/index.html">
 <meta property="og:site_name" content="Smallbo's Notes">
-<meta property="og:description" content="数据适配器——BaseAdapter什么是数据适配器适配器是AdapterView视图（如ListView - 列表视图控件、Gallery - 缩略图浏览器控件、GridView - 网格控件、Spinner - 下拉列表控件、AutoCompleteTextView - 自动提示文本框、ExpandableListView - 支持展开/收缩功能的列表控件等）与数据之间的桥梁，用来处理数据并将">
+<meta property="og:description" content="LIstView缓存机制什么是数据适配器适配器是AdapterView视图（如ListView - 列表视图控件、Gallery - 缩略图浏览器控件、GridView - 网格控件、Spinner - 下拉列表控件、AutoCompleteTextView - 自动提示文本框、ExpandableListView - 支持展开/收缩功能的列表控件等）与数据之间的桥梁，用来处理数据并将数据绑定到A">
 <meta property="og:image" content="http://pic.ffsky.net/images/2015/11/21/7abd5d26983928aa1a5e87b373584d44.jpg">
 <meta property="og:image" content="http://pic.ffsky.net/images/2015/11/21/c0c8ee6d70d07ea3b421627ce8d1156b.jpg">
-<meta property="og:updated_time" content="2015-11-21T05:44:17.718Z">
+<meta property="og:updated_time" content="2015-11-21T05:53:55.344Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BaseAdapter适配器的使用与优化">
-<meta name="twitter:description" content="数据适配器——BaseAdapter什么是数据适配器适配器是AdapterView视图（如ListView - 列表视图控件、Gallery - 缩略图浏览器控件、GridView - 网格控件、Spinner - 下拉列表控件、AutoCompleteTextView - 自动提示文本框、ExpandableListView - 支持展开/收缩功能的列表控件等）与数据之间的桥梁，用来处理数据并将">
+<meta name="twitter:title" content="Android笔记之BaseAdapter适配器的使用与优化">
+<meta name="twitter:description" content="LIstView缓存机制什么是数据适配器适配器是AdapterView视图（如ListView - 列表视图控件、Gallery - 缩略图浏览器控件、GridView - 网格控件、Spinner - 下拉列表控件、AutoCompleteTextView - 自动提示文本框、ExpandableListView - 支持展开/收缩功能的列表控件等）与数据之间的桥梁，用来处理数据并将数据绑定到A">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -62,7 +62,7 @@
 
 
 
-  <title> BaseAdapter适配器的使用与优化 | Smallbo's Notes </title>
+  <title> Android笔记之BaseAdapter适配器的使用与优化 | Smallbo's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -190,7 +190,7 @@
           
           
             
-              BaseAdapter适配器的使用与优化
+              Android笔记之BaseAdapter适配器的使用与优化
             
           
         </h1>
@@ -204,6 +204,21 @@
           </time>
         </span>
 
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Android/" itemprop="url" rel="index">
+                  <span itemprop="name">Android</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
         
 
         
@@ -226,19 +241,27 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="数据适配器——BaseAdapter">数据适配器——BaseAdapter</h2><h3 id="什么是数据适配器">什么是数据适配器</h3><p><strong>适配器</strong>是AdapterView视图（如ListView - 列表视图控件、Gallery - 缩略图浏览器控件、GridView - 网格控件、Spinner - 下拉列表控件、AutoCompleteTextView - 自动提示文本框、ExpandableListView - 支持展开/收缩功能的列表控件等）与数据之间的桥梁，用来处理数据并将数据绑定到AdapterView上。</p>
+        <span itemprop="articleBody"><h2 id="LIstView缓存机制">LIstView缓存机制</h2><h3 id="什么是数据适配器">什么是数据适配器</h3><p><strong>适配器</strong>是AdapterView视图（如ListView - 列表视图控件、Gallery - 缩略图浏览器控件、GridView - 网格控件、Spinner - 下拉列表控件、AutoCompleteTextView - 自动提示文本框、ExpandableListView - 支持展开/收缩功能的列表控件等）与数据之间的桥梁，用来处理数据并将数据绑定到AdapterView上。</p>
 <p><strong><em>AdapterView</em></strong>对象有两个<strong>主要任务</strong></p>
 <ol>
 <li>在布局中显示数据</li>
 <li>处理用户的选择</li>
 </ol>
-<p>数据源的来源是各种各样的，而ListView所展示的格式是有一定要求的。数据适配器正是建立了数据源与ListView之间的适配关系，将数据源转换成ListView能够显示的数据格式，从而将数据的来源和数据的显示进行了解耦，降低了程序的耦合性，让程序更加容易拓展。<br>android提供多种适配器，开发时可以针对数据源的不同采用最方便的适配器，也可以自定义适配器完成复杂功能。<br><img src="http://pic.ffsky.net/images/2015/11/21/7abd5d26983928aa1a5e87b373584d44.jpg" alt=""><br><em>BaseAdapter</em>一般的适配器基类可用于将数据绑定到listview、Gallery、GridView 、spinner、AutoCompleteTextView上，当然也可以绑定到ExpandableListView上<br>BaseExpandableListAdapter可扩展的适配器基类可用于将数据绑定到支持展开/收缩功能的列表控件ExpandableListView上，ExpandableListView继承自ListView<br>更多关于适配器的内容可参考<a href="http://www.cnblogs.com/bravestarrhu/archive/2012/05/04/2483179.html" target="_blank" rel="external">这篇文章</a></p>
+<p>数据源的来源是各种各样的，而ListView所展示的格式是有一定要求的。数据适配器正是建立了数据源与ListView之间的适配关系，将数据源转换成ListView能够显示的数据格式，从而将数据的来源和数据的显示进行了解耦，降低了程序的耦合性，让程序更加容易拓展。<br>android提供多种适配器，开发时可以针对数据源的不同采用最方便的适配器，也可以自定义适配器完成复杂功能。</p>
+<a id="more"></a>
+<p><img src="http://pic.ffsky.net/images/2015/11/21/7abd5d26983928aa1a5e87b373584d44.jpg" alt=""><br><em>BaseAdapter</em>一般的适配器基类可用于将数据绑定到listview、Gallery、GridView 、spinner、AutoCompleteTextView上，当然也可以绑定到ExpandableListView上<br>BaseExpandableListAdapter可扩展的适配器基类可用于将数据绑定到支持展开/收缩功能的列表控件ExpandableListView上，ExpandableListView继承自ListView<br>更多关于适配器的内容可参考<a href="http://www.cnblogs.com/bravestarrhu/archive/2012/05/04/2483179.html" target="_blank" rel="external">这篇文章</a></p>
 <h3 id="ListView的显示与缓存机制">ListView的显示与缓存机制</h3><p><img src="http://pic.ffsky.net/images/2015/11/21/c0c8ee6d70d07ea3b421627ce8d1156b.jpg" alt=""><br>ListView并不会一次把所有的数据都加载出来，而是只加载显示在屏幕上的数据。如图所示，当向上滑动屏幕，将Item1移除屏幕时，Item1被放入对象池中，原本在对象池中的Item8放到了Item7的下方。</p>
 </span>
       
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/android/" rel="tag">#android</a>
+          
+        </div>
       
 
       
@@ -275,7 +298,7 @@
           <div class="comments" id="comments">
             
               <div class="ds-thread" data-thread-key="2015/11/21/BaseAdapter适配器的使用与优化/"
-                   data-title="BaseAdapter适配器的使用与优化" data-url="http://demoniaccube.github.io/2015/11/21/BaseAdapter适配器的使用与优化/">
+                   data-title="Android笔记之BaseAdapter适配器的使用与优化" data-url="http://demoniaccube.github.io/2015/11/21/BaseAdapter适配器的使用与优化/">
               </div>
             
           </div>
@@ -315,7 +338,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -371,7 +394,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据适配器——BaseAdapter"><span class="nav-number">1.</span> <span class="nav-text">数据适配器——BaseAdapter</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是数据适配器"><span class="nav-number">1.1.</span> <span class="nav-text">什么是数据适配器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ListView的显示与缓存机制"><span class="nav-number">1.2.</span> <span class="nav-text">ListView的显示与缓存机制</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#LIstView缓存机制"><span class="nav-number">1.</span> <span class="nav-text">LIstView缓存机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是数据适配器"><span class="nav-number">1.1.</span> <span class="nav-text">什么是数据适配器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ListView的显示与缓存机制"><span class="nav-number">1.2.</span> <span class="nav-text">ListView的显示与缓存机制</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
