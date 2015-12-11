@@ -189,6 +189,107 @@
           
           
             
+              <a class="post-title-link" href="/2015/12/11/java中的super和重写/" itemprop="url">
+                java中的super和重写
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-12-11T22:08:28+08:00" content="2015-12-11">
+            2015-12-11
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Java遇到的问题/" itemprop="url" rel="index">
+                  <span itemprop="name">Java遇到的问题</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/12/11/java中的super和重写/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/11/java中的super和重写/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h2 id="出现的问题">出现的问题</h2><p>在<a href="http://demoniaccube.github.io/2015/12/11/Java实现打字母游戏/">Java实现打字母游戏</a>那篇博客里，遇到一个很奇怪的现象。在下雪代码的48行，如果去掉super，就像是下雨一样，且背景是灰色。</p>
+<h2 id="解决问题">解决问题</h2><p>首先，super()是调用自己继承的父类的构造函数。<br>那么，这就牵涉到JPanel的paint()方法了，我们是继承了JPanel并重写了paint()方法，如果不调用super，那么在main中执行的只是我的paint方法，原来父类JPanel中的paint方法并没有执行。所以在原来父类的默认构造以及原本的paint方法中可能存在相应处理代码。但是我查了一下JPanel的源码，并没有找到paint方法，很奇怪，它继承自JComponent，于是又看了一下JComponent的源码，看到了startPaint方法，额(⊙o⊙)…有点晕。</p>
+<p>显然，上面除了super的问题还涉及到了方法的重写。<br>于是再来看看方法的重写。<br>首先强调一下重载和重写（覆盖）不是一个概念。<br><em>方法重载</em>：如果有两个方法的方法名相同，但参数不一致，那么可以说一个方法是另一个方法的重载。</p>
+<p><em>方法重写</em>：如果在子类中定义一个方法，其名称、返回类型及参数签名正好与父类中某个方法的名称、返回类型及参数签名相匹配，那么可以说，子类的方法覆盖了父类的方法</p>
+<p>写个简单的例子来说明方法的重写</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">People</span> </span><br><span class="line"></span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span><br><span class="line">    </span>&#123;  </span><br><span class="line">        <span class="keyword">return</span> <span class="string">"people"</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line"> </span><br><span class="line">&#125;  </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">extends</span> <span class="title">People</span> </span><br><span class="line"></span>&#123;  </span><br><span class="line">      </span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span><br><span class="line">    </span>&#123;  </span><br><span class="line">        <span class="keyword">return</span> <span class="string">"student"</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">&#125;  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTest</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span><br><span class="line">    </span>&#123;</span><br><span class="line">    	People p1 = <span class="keyword">new</span> People();  </span><br><span class="line">    	System.out.println(p1.getName());<span class="comment">//运行结果为people  </span></span><br><span class="line">    	    </span><br><span class="line">    	Student s1 = <span class="keyword">new</span> Student();  </span><br><span class="line">    	System.out.println(s1.getName());<span class="comment">//运行结果为student  </span></span><br><span class="line">    	    </span><br><span class="line">    	People p2 = <span class="keyword">new</span> Student();  </span><br><span class="line">    	System.out.println(p2.getName());<span class="comment">//运行结果为student  </span></span><br><span class="line">     </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果说明：子类重写了父类的方法，在使用多态实现父类new出子类时，调用相同函数时，调用的是子类重写后的方法。</p>
+<p>但是当我们重写的不是方法，而是变量的，结果还是和上面的一样吗？</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">People</span> </span><br><span class="line"></span>&#123;  </span><br><span class="line">    <span class="keyword">protected</span> String name=<span class="string">"people"</span>;     </span><br><span class="line">&#125;  </span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">extends</span> <span class="title">People</span> </span><br><span class="line"></span>&#123;  </span><br><span class="line">    <span class="keyword">protected</span> String name=<span class="string">"student"</span>;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTest</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span><br><span class="line">    </span>&#123;              </span><br><span class="line">        People p1 = <span class="keyword">new</span> People();  </span><br><span class="line">        System.out.println(p1.name);<span class="comment">//运行结果为people  </span></span><br><span class="line">          </span><br><span class="line">        Student s1 = <span class="keyword">new</span> Student();  </span><br><span class="line">        System.out.println(s1.name);<span class="comment">//运行结果为student  </span></span><br><span class="line">          </span><br><span class="line">        People p2 = <span class="keyword">new</span> Student();  </span><br><span class="line">        System.out.println(p2.name);<span class="comment">//运行结果为people  </span></span><br><span class="line">     </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>答案是：no！父类new的子类实例，调用变量时，调用的是父类的变量。</p>
+<h2 id="总结">总结</h2><p>一、 this()是调用自己其他的构造函数，super()是调用自己继承的父类的构造函数。<br><strong>注意</strong>：</p>
+<ol>
+<li>如果只想调用默认无参数的父类构造函数，不用在子类的构造函数当中写出来。在实际编程的时候，很容易就会忽略这一点。</li>
+<li>如果父类的构造函数是带参数的，又没写默认的无参数构造函数，那么子类在写构造函数的时候必须引用super的含参构造。</li>
+<li>两个关键字不能同时出现在子类的一个构造函数当中。</li>
+</ol>
+<p>二、 只有方法的重写，没有变量的重写。方法的重写把具体对象抽象为一般对象的目的，从而实现了多态性。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/12/11/Java实现小球碰撞/" itemprop="url">
                 Java实现小球碰撞
               </a>
@@ -992,99 +1093,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/10/20/对Vector3-Lerp-插值的理解/" itemprop="url">
-                Unity3D之对Vector3.Lerp插值的理解
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-10-20T11:33:19+08:00" content="2015-10-20">
-            2015-10-20
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Unity3D/" itemprop="url" rel="index">
-                  <span itemprop="name">Unity3D</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/10/20/对Vector3-Lerp-插值的理解/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/20/对Vector3-Lerp-插值的理解/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h3 id="什么是插值">什么是插值</h3><p>对于刚接触unity的同学来说，插值可能是比较难理解的概念之一。<br><strong>插值：</strong></p>
-<blockquote>
-<p>在离散数据的基础上补插连续函数，使得这条连续曲线通过全部给定的离散数据点。插值是离散函数逼近的重要方法，利用它可通过函数在有限个点处的取值状况，估算出函数在其他点处的近似值。插值：用来填充图像变换时像素之间的空隙。</p>
-</blockquote>
-<p>以上是百度百科里的解释，感觉太官方话了。下面结合unity中的Vector3.Lerp具体的谈谈什么是插值，插值是如何计算的。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/20/对Vector3-Lerp-插值的理解/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1123,14 +1131,14 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
