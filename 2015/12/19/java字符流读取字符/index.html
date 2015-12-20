@@ -39,16 +39,19 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="出现的问题在Java实现打字母游戏那篇文章里，遇到一个很奇怪的现象。在下雪代码的48行，如果去掉super，就像是下雨一样，且背景是灰色。">
+<meta name="description" content="java字符流读取字符java字符流读取一个字符，我觉得没啥意义，还不如用字节流得了。字符流在字节流后出现，也是用于处理多行文字时方便吧。
+1234567891011121314151617181920import java.io.*;public class MyTest&amp;#123;	public static void main(String args[])	&amp;#123;		File f =">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java中的super和重写">
-<meta property="og:url" content="http://demoniaccube.github.io/2015/12/11/java中的super和重写/index.html">
+<meta property="og:title" content="java字符流读取字符">
+<meta property="og:url" content="http://demoniaccube.github.io/2015/12/19/java字符流读取字符/index.html">
 <meta property="og:site_name" content="Smallbo's Notes">
-<meta property="og:description" content="出现的问题在Java实现打字母游戏那篇文章里，遇到一个很奇怪的现象。在下雪代码的48行，如果去掉super，就像是下雨一样，且背景是灰色。">
-<meta property="og:updated_time" content="2015-12-20T09:26:36.182Z">
+<meta property="og:description" content="java字符流读取字符java字符流读取一个字符，我觉得没啥意义，还不如用字节流得了。字符流在字节流后出现，也是用于处理多行文字时方便吧。
+1234567891011121314151617181920import java.io.*;public class MyTest&amp;#123;	public static void main(String args[])	&amp;#123;		File f =">
+<meta property="og:updated_time" content="2015-12-20T08:47:52.781Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java中的super和重写">
-<meta name="twitter:description" content="出现的问题在Java实现打字母游戏那篇文章里，遇到一个很奇怪的现象。在下雪代码的48行，如果去掉super，就像是下雨一样，且背景是灰色。">
+<meta name="twitter:title" content="java字符流读取字符">
+<meta name="twitter:description" content="java字符流读取字符java字符流读取一个字符，我觉得没啥意义，还不如用字节流得了。字符流在字节流后出现，也是用于处理多行文字时方便吧。
+1234567891011121314151617181920import java.io.*;public class MyTest&amp;#123;	public static void main(String args[])	&amp;#123;		File f =">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -60,7 +63,7 @@
 
 
 
-  <title> java中的super和重写 | Smallbo's Notes </title>
+  <title> java字符流读取字符 | Smallbo's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -188,7 +191,7 @@
           
           
             
-              java中的super和重写
+              java字符流读取字符
             
           
         </h1>
@@ -197,8 +200,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-12-11T22:08:28+08:00" content="2015-12-11">
-            2015-12-11
+          <time itemprop="dateCreated" datetime="2015-12-19T16:40:36+08:00" content="2015-12-19">
+            2015-12-19
           </time>
         </span>
 
@@ -207,8 +210,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Java遇到的问题/" itemprop="url" rel="index">
-                  <span itemprop="name">Java遇到的问题</span>
+                <a href="/categories/Java练习/" itemprop="url" rel="index">
+                  <span itemprop="name">Java练习</span>
                 </a>
               </span>
 
@@ -223,8 +226,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/12/11/java中的super和重写/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/11/java中的super和重写/" itemprop="commentsCount"></span>
+              <a href="/2015/12/19/java字符流读取字符/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/19/java字符流读取字符/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -239,24 +242,11 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="出现的问题">出现的问题</h2><p>在<a href="http://demoniaccube.github.io/2015/12/11/Java实现打字母游戏/">Java实现打字母游戏</a>那篇文章里，遇到一个很奇怪的现象。在下雪代码的48行，如果去掉super，就像是下雨一样，且背景是灰色。<br><a id="more"></a></p>
-<h2 id="解决问题">解决问题</h2><p>首先，super()是调用自己继承的父类的构造函数。<br>那么，这就牵涉到JPanel的paint()方法了，我是继承了JPanel并重写了paint()方法，如果不调用super，那么在main中执行的只是我的paint方法，原来父类JPanel中的paint方法并没有执行。所以在原来父类的默认构造以及原本的paint方法中可能存在相应处理代码。但是我查了一下JPanel的源码，并没有找到paint方法，很奇怪，它继承自JComponent，于是又看了一下JComponent的源码，看到了startPaint方法，额(⊙o⊙)…有点晕。</p>
-<p>显然，上面除了super的问题还涉及到了方法的重写。<br>于是再来看看方法的重写。<br>首先强调一下重载和重写（覆盖）不是一个概念。<br><em>方法重载</em>：如果有两个方法的方法名相同，但参数不一致，那么可以说一个方法是另一个方法的重载。</p>
-<p><em>方法重写</em>：如果在子类中定义一个方法，其名称、返回类型及参数签名正好与父类中某个方法的名称、返回类型及参数签名相匹配，那么可以说，子类的方法覆盖了父类的方法</p>
-<p>写个简单的例子来说明方法的重写</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">People</span> </span><br><span class="line"></span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span><br><span class="line">    </span>&#123;  </span><br><span class="line">        <span class="keyword">return</span> <span class="string">"people"</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line"> </span><br><span class="line">&#125;  </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">extends</span> <span class="title">People</span> </span><br><span class="line"></span>&#123;  </span><br><span class="line">      </span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span><br><span class="line">    </span>&#123;  </span><br><span class="line">        <span class="keyword">return</span> <span class="string">"student"</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">&#125;  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTest</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span><br><span class="line">    </span>&#123;</span><br><span class="line">    	People p1 = <span class="keyword">new</span> People();  </span><br><span class="line">    	System.out.println(p1.getName());<span class="comment">//运行结果为people  </span></span><br><span class="line">    	    </span><br><span class="line">    	Student s1 = <span class="keyword">new</span> Student();  </span><br><span class="line">    	System.out.println(s1.getName());<span class="comment">//运行结果为student  </span></span><br><span class="line">    	    </span><br><span class="line">    	People p2 = <span class="keyword">new</span> Student();  </span><br><span class="line">    	System.out.println(p2.getName());<span class="comment">//运行结果为student  </span></span><br><span class="line">     </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果说明：子类重写了父类的方法，在使用多态实现父类new出子类时，调用相同函数时，调用的是子类重写后的方法。</p>
-<p>但是当我们重写的不是方法，而是变量的，结果还是和上面的一样吗？</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">People</span> </span><br><span class="line"></span>&#123;  </span><br><span class="line">    <span class="keyword">protected</span> String name=<span class="string">"people"</span>;     </span><br><span class="line">&#125;  </span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">extends</span> <span class="title">People</span> </span><br><span class="line"></span>&#123;  </span><br><span class="line">    <span class="keyword">protected</span> String name=<span class="string">"student"</span>;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTest</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span><br><span class="line">    </span>&#123;              </span><br><span class="line">        People p1 = <span class="keyword">new</span> People();  </span><br><span class="line">        System.out.println(p1.name);<span class="comment">//运行结果为people  </span></span><br><span class="line">          </span><br><span class="line">        Student s1 = <span class="keyword">new</span> Student();  </span><br><span class="line">        System.out.println(s1.name);<span class="comment">//运行结果为student  </span></span><br><span class="line">          </span><br><span class="line">        People p2 = <span class="keyword">new</span> Student();  </span><br><span class="line">        System.out.println(p2.name);<span class="comment">//运行结果为people  </span></span><br><span class="line">     </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>答案是：no！父类new的子类实例，调用变量时，调用的是父类的变量。</p>
-<h2 id="总结">总结</h2><p>一、 this()是调用自己其他的构造函数，super()是调用自己继承的父类的构造函数。<br><strong>注意</strong>：</p>
-<ol>
-<li>如果只想调用默认无参数的父类构造函数，不用在子类的构造函数当中写出来。在实际编程的时候，很容易就会忽略这一点。</li>
-<li>如果父类的构造函数是带参数的，又没写默认的无参数构造函数，那么子类在写构造函数的时候必须引用super的含参构造。</li>
-<li>两个关键字不能同时出现在子类的一个构造函数当中。</li>
-</ol>
-<p>二、 只有方法的重写，没有变量的重写。方法的重写把具体对象抽象为一般对象的目的，从而实现了多态性。</p>
-<p>本来还想总结一下多态的。看到<a href="http://www.cnblogs.com/jack204/archive/2012/10/29/2745150.html" target="_blank" rel="external">这篇博客</a>总结的不错，于是直接在这引用好了。以后忘了再来看一下。</p>
+        <span itemprop="articleBody"><h3 id="java字符流读取字符">java字符流读取字符</h3><p>java字符流读取一个字符，我觉得没啥意义，还不如用字节流得了。字符流在字节流后出现，也是用于处理多行文字时方便吧。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTest</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span><br><span class="line">	</span>&#123;</span><br><span class="line">		File f = <span class="keyword">new</span> File(<span class="string">"E:\\text.txt"</span>);</span><br><span class="line">		<span class="keyword">try</span></span><br><span class="line">		&#123;</span><br><span class="line">			FileReader fr = <span class="keyword">new</span> FileReader(f);</span><br><span class="line">			BufferedReader br = <span class="keyword">new</span> BufferedReader(fr);</span><br><span class="line">			<span class="keyword">while</span>(br.ready())</span><br><span class="line">			&#123;</span><br><span class="line">				System.out.println(br.readLine());</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">catch</span>(Exception e)&#123;&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="java字符流复制文本文件">java字符流复制文本文件</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTest</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span><br><span class="line">	</span>&#123;</span><br><span class="line">		File f1 = <span class="keyword">new</span> File(<span class="string">"E:\\text.txt"</span>);</span><br><span class="line">		File f2 = <span class="keyword">new</span> File(<span class="string">"E:\\text2.txt"</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">try</span></span><br><span class="line">		&#123;</span><br><span class="line">			FileReader fr = <span class="keyword">new</span> FileReader(f1);</span><br><span class="line">			FileWriter fw = <span class="keyword">new</span> FileWriter(f2);</span><br><span class="line">			</span><br><span class="line">			BufferedReader br = <span class="keyword">new</span> BufferedReader(fr);</span><br><span class="line">			PrintWriter pw = <span class="keyword">new</span> PrintWriter(fw);</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">while</span>(br.ready())</span><br><span class="line">			&#123;</span><br><span class="line">				pw.println(br.readLine());</span><br><span class="line">			&#125;</span><br><span class="line">			br.close();<span class="comment">//不知道读缓冲区要不要关，去掉这句也行</span></span><br><span class="line">			pw.close();</span><br><span class="line">			<span class="comment">//程序结束前，需要调用一个flush方法，以便将缓冲区的内容刷新到文件中；</span></span><br><span class="line">			<span class="comment">//也可以直接调用close方法，close会调用flush方法，同时close会关闭这个流</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">catch</span>(Exception e)&#123;&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：想test1.txt中写入大量内容，而不是close或flush，到了一定程度，这个文件也会有内容。这是因为缓冲区有限，一旦缓冲区装满了，程序也会自动将缓冲区里的内容刷新到文件中。</p>
+<p>个人感觉字符流适合处理文本文件，不适合复制大文件，复制大文件用字节流比较合适。</p>
 </span>
       
     </div>
@@ -274,13 +264,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/12/12/转-java中-和equal的区别/" rel="prev"></a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/11/Java实现小球碰撞/" rel="next">Java实现小球碰撞</a>
+              <a href="/2015/12/19/java字节流读取字符/" rel="next">java字节流读取字符</a>
             
           </div>
         </div>
@@ -305,8 +293,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/12/11/java中的super和重写/"
-                   data-title="java中的super和重写" data-url="http://demoniaccube.github.io/2015/12/11/java中的super和重写/">
+              <div class="ds-thread" data-thread-key="2015/12/19/java字符流读取字符/"
+                   data-title="java字符流读取字符" data-url="http://demoniaccube.github.io/2015/12/19/java字符流读取字符/">
               </div>
             
           </div>
@@ -402,7 +390,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#出现的问题"><span class="nav-number">1.</span> <span class="nav-text">出现的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决问题"><span class="nav-number">2.</span> <span class="nav-text">解决问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#java字符流读取字符"><span class="nav-number">1.</span> <span class="nav-text">java字符流读取字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java字符流复制文本文件"><span class="nav-number">2.</span> <span class="nav-text">java字符流复制文本文件</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

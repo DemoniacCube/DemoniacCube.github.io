@@ -189,6 +189,278 @@
           
           
             
+              <a class="post-title-link" href="/2015/11/18/Android练习之活动/" itemprop="url">
+                Android练习之Activity活动
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-11-18T11:02:24+08:00" content="2015-11-18">
+            2015-11-18
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Android练习/" itemprop="url" rel="index">
+                  <span itemprop="name">Android练习</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/11/18/Android练习之活动/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/18/Android练习之活动/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h2 id="前言">前言</h2><p>找到一本不错的书——《第一行代码Android》，虽然是基于4.X版本的，但还有很多知识没有变，当然也还有一些东西变化了。所以决定用Android Studio1.4单刷第一行代码Android。</p>
+<h2 id="隐藏标题栏">隐藏标题栏</h2><p>在安卓4.x可以使用以下两种方法隐藏标题栏：<br>1、在代码中实现：<br>在此方法<code>setContentView（R.layout.main）</code>之前加入：<br><code>requestWindowFeature(Window.FEATURE_NO_TITLE)</code>;标题栏就没有了。</p>
+<p>2、在AndroidManifest.xml中实现：<br>注册Activity时加上如下的一句配置就可以实现。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">activity</span>  </span><br><span class="line">		<span class="attribute">android:name</span>=<span class="value">".MainActivity"</span></span><br><span class="line">		<span class="attribute">android:theme</span>=<span class="value">"@android:style/Theme.NoTitleBar"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">activity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>但是从5.0起，这两个方法就不起作用了，出现空指针的错误。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/11/18/Android练习之活动/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/11/01/Android笔记（二）/" itemprop="url">
+                Android笔记之Activity的生命周期
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-11-01T10:13:22+08:00" content="2015-11-01">
+            2015-11-01
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Android/" itemprop="url" rel="index">
+                  <span itemprop="name">Android</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/11/01/Android笔记（二）/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/01/Android笔记（二）/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h1 id="前言">前言</h1><p>mars老师的视频只更新到第二季，从2015年开始就不再更新了。所以这部分笔记就只能记到第二季了。但是学习Android的步伐不会停下，后面可能会接着看mars重制版之前的视频或者看看慕课网、极客学院等关于安卓的知识。极客学院的那个讲安卓的老师讲的不好，说了半天不知道在说什么。看情况吧，之后还是会记笔记的，不过可能会和这部分内容衔接的不太好。</p>
+<p>在这季中，mars老师将UI、网络、线程等知识串着讲，都只是谈谈初级知识。我觉得这样挺好，不至于学了一大块内容还做不出什么东西来，枯燥乏味之后就搁置的半途而废。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/11/01/Android笔记（二）/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/10/29/Android笔记/" itemprop="url">
+                Android笔记之Android基本控件与布局
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-10-29T20:18:17+08:00" content="2015-10-29">
+            2015-10-29
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Android/" itemprop="url" rel="index">
+                  <span itemprop="name">Android</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/10/29/Android笔记/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/29/Android笔记/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h1 id="前言">前言</h1><p>以后想要混移动端，还是要好好学学Android的。找了一些视频，感觉<a href="http://study.163.com/course/courseMain.htm?courseId=207001">mars老师</a>讲的不错，通俗易懂，条理清晰，非常适合入门。于是把视频中学习到的东西整理出来，方便以后复习。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/10/29/Android笔记/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/10/20/对Vector3-Lerp-插值的理解/" itemprop="url">
                 Unity3D之对Vector3.Lerp插值的理解
               </a>
@@ -489,21 +761,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">标签</span>
               
           </div>
