@@ -1,0 +1,712 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="在平凡中坚持前行，总有一天会偶遇不平凡的自己" />
+
+
+
+  <meta name="keywords" content="android," />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="前言数据存储，说实话，从学习C的C#都没有注意过，一直到用unity做游戏的时候，突然意识到，我的数据都是临时的，我怎么把数据写到硬盘里，下次用的时候再去取呢？好吧，实在有些惭愧。这次学Android，终于和数据存储这个话题，面对面了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android之数据存储">
+<meta property="og:url" content="http://demoniaccube.github.io/2015/12/29/Android之数据存储/index.html">
+<meta property="og:site_name" content="Smallbo's Notes">
+<meta property="og:description" content="前言数据存储，说实话，从学习C的C#都没有注意过，一直到用unity做游戏的时候，突然意识到，我的数据都是临时的，我怎么把数据写到硬盘里，下次用的时候再去取呢？好吧，实在有些惭愧。这次学Android，终于和数据存储这个话题，面对面了。">
+<meta property="og:updated_time" content="2016-01-05T14:07:56.778Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android之数据存储">
+<meta name="twitter:description" content="前言数据存储，说实话，从学习C的C#都没有注意过，一直到用unity做游戏的时候，突然意识到，我的数据都是临时的，我怎么把数据写到硬盘里，下次用的时候再去取呢？好吧，实在有些惭愧。这次学Android，终于和数据存储这个话题，面对面了。">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post'
+  };
+</script>
+
+
+
+  <title> Android之数据存储 | Smallbo's Notes </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?5b4f79c60913811badfc0a21ff4c5c0c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">Smallbo's Notes</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            <i class="menu-item-icon icon-next-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            <i class="menu-item-icon icon-next-about"></i> <br />
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            <i class="menu-item-icon icon-next-guestbook"></i> <br />
+            留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            时光轴
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              Android之数据存储
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-12-29T16:55:38+08:00" content="2015-12-29">
+            2015-12-29
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Android练习/" itemprop="url" rel="index">
+                  <span itemprop="name">Android练习</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/12/29/Android之数据存储/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/29/Android之数据存储/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><h1 id="前言">前言</h1><p>数据存储，说实话，从学习C的C#都没有注意过，一直到用unity做游戏的时候，突然意识到，我的数据都是临时的，我怎么把数据写到硬盘里，下次用的时候再去取呢？好吧，实在有些惭愧。这次学Android，终于和数据存储这个话题，面对面了。<br><a id="more"></a><br>说到数据存储不得不说的是I/O流，开始看Android书，看到Android的三种数据存储时，一下子就蒙了。为此还特地去恶补了一下java（话说，C#里也有io流的，我怎么就没注意过呢？该会的终究还是躲不过啊~）；顺便还把数据复习了一下，好像以前学的全都忘了，呀呀哎呀~~~</p>
+<p>看了书，会了一点，我也懒得总结各个知识点了。现在感觉那种把书上的东西总结到博客上的做法没啥用。也是最近学习的一些感悟吧。还是得敲代码！下面就分别用Android的文件存储、SharedPreferences存储以及数据库存储实现一个可以记录用户名的登陆界面。</p>
+<h1 id="正文">正文</h1><p>先把布局文件写好</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">RelativeLayout</span></span><br><span class="line">    <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attribute">xmlns:tools</span>=<span class="value">"http://schemas.android.com/tools"</span></span><br><span class="line">    <span class="attribute">android:layout_width</span>=<span class="value">"match_parent"</span></span><br><span class="line">    <span class="attribute">android:layout_height</span>=<span class="value">"match_parent"</span></span><br><span class="line">    <span class="attribute">android:paddingLeft</span>=<span class="value">"@dimen/activity_horizontal_margin"</span></span><br><span class="line">    <span class="attribute">android:paddingRight</span>=<span class="value">"@dimen/activity_horizontal_margin"</span></span><br><span class="line">    <span class="attribute">android:paddingTop</span>=<span class="value">"@dimen/activity_vertical_margin"</span></span><br><span class="line">    <span class="attribute">android:paddingBottom</span>=<span class="value">"@dimen/activity_vertical_margin"</span></span><br><span class="line">    <span class="attribute">tools:context</span>=<span class="value">".MainActivity"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">TextView</span></span><br><span class="line">        <span class="attribute">android:id</span>=<span class="value">"@+id/username_txt"</span></span><br><span class="line">        <span class="attribute">android:layout_width</span>=<span class="value">"wrap_content"</span></span><br><span class="line">        <span class="attribute">android:layout_height</span>=<span class="value">"wrap_content"</span></span><br><span class="line">        <span class="attribute">android:layout_alignBaseline</span>=<span class="value">"@+id/edit_username"</span></span><br><span class="line">        <span class="attribute">android:text</span>=<span class="value">"用户名："</span></span><br><span class="line">        <span class="attribute">android:textSize</span>=<span class="value">"25sp"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">EditText</span></span><br><span class="line">        <span class="attribute">android:id</span>=<span class="value">"@+id/edit_username"</span></span><br><span class="line">        <span class="attribute">android:layout_width</span>=<span class="value">"match_parent"</span></span><br><span class="line">        <span class="attribute">android:layout_height</span>=<span class="value">"wrap_content"</span></span><br><span class="line">        <span class="attribute">android:layout_toRightOf</span>=<span class="value">"@+id/username_txt"</span></span><br><span class="line">        <span class="attribute">android:hint</span>=<span class="value">"请输入您的账号"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">TextView</span></span><br><span class="line">        <span class="attribute">android:id</span>=<span class="value">"@+id/password_txt"</span></span><br><span class="line">        <span class="attribute">android:layout_width</span>=<span class="value">"wrap_content"</span></span><br><span class="line">        <span class="attribute">android:layout_height</span>=<span class="value">"wrap_content"</span></span><br><span class="line">        <span class="attribute">android:layout_below</span>=<span class="value">"@+id/username_txt"</span></span><br><span class="line">        <span class="attribute">android:layout_alignBaseline</span>=<span class="value">"@+id/edit_password"</span></span><br><span class="line">        <span class="attribute">android:text</span>=<span class="value">"密码："</span></span><br><span class="line">        <span class="attribute">android:textSize</span>=<span class="value">"25sp"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">EditText</span></span><br><span class="line">        <span class="attribute">android:id</span>=<span class="value">"@+id/edit_password"</span></span><br><span class="line">        <span class="attribute">android:layout_width</span>=<span class="value">"match_parent"</span></span><br><span class="line">        <span class="attribute">android:layout_height</span>=<span class="value">"wrap_content"</span></span><br><span class="line">        <span class="attribute">android:layout_below</span>=<span class="value">"@+id/edit_username"</span></span><br><span class="line">        <span class="attribute">android:layout_toRightOf</span>=<span class="value">"@+id/username_txt"</span></span><br><span class="line">        <span class="attribute">android:hint</span>=<span class="value">"请输入您的密码"</span></span><br><span class="line">        <span class="attribute">android:password</span>=<span class="value">"true"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">CheckBox</span></span><br><span class="line">        <span class="attribute">android:id</span>=<span class="value">"@+id/isRememberPassword"</span></span><br><span class="line">        <span class="attribute">android:layout_width</span>=<span class="value">"wrap_content"</span></span><br><span class="line">        <span class="attribute">android:layout_height</span>=<span class="value">"wrap_content"</span></span><br><span class="line">        <span class="attribute">android:layout_below</span>=<span class="value">"@+id/edit_password"</span></span><br><span class="line">        <span class="attribute">android:layout_centerHorizontal</span>=<span class="value">"true"</span></span><br><span class="line">        <span class="attribute">android:text</span>=<span class="value">"记住密码"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">Button</span></span><br><span class="line">        <span class="attribute">android:id</span>=<span class="value">"@+id/btn_login"</span></span><br><span class="line">        <span class="attribute">android:layout_height</span>=<span class="value">"wrap_content"</span></span><br><span class="line">        <span class="attribute">android:layout_width</span>=<span class="value">"wrap_content"</span></span><br><span class="line">        <span class="attribute">android:layout_below</span>=<span class="value">"@+id/isRememberPassword"</span></span><br><span class="line">        <span class="attribute">android:layout_centerHorizontal</span>=<span class="value">"true"</span></span><br><span class="line">        <span class="attribute">android:text</span>=<span class="value">"登陆"</span></span><br><span class="line">        <span class="attribute">android:textSize</span>=<span class="value">"25sp"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">RelativeLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>布局没啥好说，就是一个登陆界面。</p>
+<h2 id="文件存储">文件存储</h2><p>这里的文件存储用的是java里的IO流。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.demoniaccube.chobits.login;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.support.v7.app.AppCompatActivity;</span><br><span class="line"><span class="keyword">import</span> android.os.Bundle;</span><br><span class="line"><span class="keyword">import</span> android.text.TextUtils;</span><br><span class="line"><span class="keyword">import</span> android.view.View;</span><br><span class="line"><span class="keyword">import</span> android.widget.Button;</span><br><span class="line"><span class="keyword">import</span> android.widget.CheckBox;</span><br><span class="line"><span class="keyword">import</span> android.widget.EditText;</span><br><span class="line"><span class="keyword">import</span> android.widget.Toast;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.BufferedReader;</span><br><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStreamReader;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Button btn_login;</span><br><span class="line">    <span class="keyword">private</span> EditText edit_username;</span><br><span class="line">    <span class="keyword">private</span> EditText edit_password;</span><br><span class="line">    <span class="keyword">private</span> CheckBox isRemember;</span><br><span class="line">    String username = <span class="string">""</span>;</span><br><span class="line">    String password = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        btn_login = (Button)findViewById(R.id.btn_login);</span><br><span class="line">        edit_username = (EditText)findViewById(R.id.edit_username);</span><br><span class="line">        edit_password = (EditText)findViewById(R.id.edit_password);</span><br><span class="line">        isRemember = (CheckBox)findViewById(R.id.isRememberPassword);</span><br><span class="line"></span><br><span class="line">        String saveText = load();</span><br><span class="line">        <span class="keyword">if</span> (!TextUtils.isEmpty(saveText))<span class="comment">//TextUtils.isEmpty()方法可以一次性进行两种空值的判断。当传入的字符串等于null或等于空字符串的时候，都会返回true。</span></span><br><span class="line">        &#123;</span><br><span class="line">            String s[] = saveText.split(<span class="string">";"</span>);<span class="comment">//注释①</span></span><br><span class="line">            edit_username.setText(s[<span class="number">0</span>]);</span><br><span class="line">            <span class="keyword">if</span> (isRemember.isChecked())</span><br><span class="line">            &#123;</span><br><span class="line">                edit_password.setText(s[<span class="number">1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line"><span class="comment">//            else</span></span><br><span class="line"><span class="comment">//            &#123;</span></span><br><span class="line"><span class="comment">//                edit_password.setText("");</span></span><br><span class="line"><span class="comment">//            &#125;</span></span><br><span class="line">        &#125;</span><br><span class="line">        btn_login.setOnClickListener(<span class="keyword">new</span> View.OnClickListener()</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="annotation">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span></span><br><span class="line">            </span>&#123;</span><br><span class="line">            	<span class="comment">//我把username的赋值放在button监听之前为什么会出现错误呢？//注释④</span></span><br><span class="line">                username = edit_username.getText().toString();</span><br><span class="line">                password = edit_password.getText().toString();</span><br><span class="line">                <span class="keyword">if</span> (username.equals(<span class="string">"aaa"</span>) &amp;&amp; password.equals(<span class="string">"123"</span>))</span><br><span class="line">                &#123;</span><br><span class="line">                    Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"登陆成功"</span>, Toast.LENGTH_SHORT).show();</span><br><span class="line">                &#125; <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"密码或账号错误，请重新输入"</span>, Toast.LENGTH_SHORT).show();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onDestroy();</span><br><span class="line">        String str = username + <span class="string">";"</span> + password;<span class="comment">//这里用一个“;”作为一个分隔符用于取数据</span></span><br><span class="line">        Save(str);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Save</span><span class="params">(String str)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        FileOutputStream fileOutputStream = <span class="keyword">null</span>;</span><br><span class="line">        PrintWriter printWriter = <span class="keyword">null</span>;<span class="comment">//注意这里printWriter和bufferedWriter的区别。注释②</span></span><br><span class="line">        <span class="keyword">try</span></span><br><span class="line">        &#123;</span><br><span class="line">            fileOutputStream = openFileOutput(<span class="string">"user"</span>, MODE_PRIVATE);</span><br><span class="line">            printWriter = <span class="keyword">new</span> PrintWriter(fileOutputStream);</span><br><span class="line">            printWriter.write(str);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">catch</span>(Exception e)&#123;&#125;</span><br><span class="line">        <span class="keyword">finally</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">try</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (printWriter != <span class="keyword">null</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    printWriter.close();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">catch</span> (Exception ee)&#123;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">load</span><span class="params">()</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        FileInputStream fileInputStream = <span class="keyword">null</span>;</span><br><span class="line">        BufferedReader bufferedReader = <span class="keyword">null</span>;</span><br><span class="line">        String saveData = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">try</span></span><br><span class="line">        &#123;</span><br><span class="line">            fileInputStream = openFileInput(<span class="string">"user"</span>);</span><br><span class="line">            bufferedReader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(fileInputStream));</span><br><span class="line">            <span class="keyword">while</span> (bufferedReader.ready())<span class="comment">//这里不用while试了一下，并不可以</span></span><br><span class="line">            &#123;</span><br><span class="line">                saveData = bufferedReader.readLine();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//注释③</span></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">catch</span> (Exception e)&#123;&#125;</span><br><span class="line">        <span class="keyword">finally</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">try</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (bufferedReader != <span class="keyword">null</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    bufferedReader.close();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">catch</span>(Exception ee)&#123;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> saveData;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注释①</strong></p>
+<pre><code><span class="built_in">split</span>用法的一个示例：利用分隔符分割字符串
+<span class="keyword">String</span> s = <span class="keyword">new</span> <span class="keyword">String</span>(<span class="string">"01:大汽车"</span>);
+<span class="keyword">String</span> a[] = s.<span class="built_in">split</span>(<span class="string">":"</span>);
+System.out.<span class="built_in">println</span>(a[<span class="number">0</span>]);
+System.out.<span class="built_in">println</span>(a[<span class="number">1</span>]);
+</code></pre><p><strong>注释②</strong><br>PrintWriter和BufferedWriter都是继承java.io.Writer，所以很多功能都一样。<br>不过PrintWriter提供println()方法可以写不同平台的换行符，而BufferedWriter可以任意设定缓冲大小。<br>OutputStream可以直接传给PrintWriter（BufferedWriter不能接收）,如：这里是<br>printWriter = new PrintWriter(fileOutputStream);就是直接将fileOutputStream传进来了。<br>而如果想用bufferedWriter，那么就得先将字节流转化为字符流：<br>bufferedWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream));</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Save</span><span class="params">(String str)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    FileOutputStream fileOutputStream = <span class="keyword">null</span>;</span><br><span class="line">    BufferedWriter bufferedWriter = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span></span><br><span class="line">    &#123;</span><br><span class="line">        fileOutputStream = openFileOutput(<span class="string">"user"</span>, MODE_PRIVATE);</span><br><span class="line">        bufferedWriter = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> OutputStreamWriter(fileOutputStream));</span><br><span class="line">        bufferedWriter.write(str);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">catch</span> (Exception e)&#123;&#125;</span><br><span class="line">    <span class="keyword">finally</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">try</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (bufferedWriter != <span class="keyword">null</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                bufferedWriter.close();<span class="comment">//关闭缓冲区</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">catch</span> (Exception ee)&#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注释③</strong><br>还可以像下面这样写。<br>（注释部分这样写是有问题的用这种方法试了一下，并不可以）书上并不是用saveData这个String，而是用了StringBuilder将文本都存在了这里，判断没变，只是存的时候用的stringBuilder.append（saveData）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">StringBuilder stringBuilder = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">      <span class="keyword">while</span> ((saveData = bufferedReader.readLine()) != <span class="keyword">null</span>)</span><br><span class="line">      &#123;</span><br><span class="line">          <span class="comment">//saveData = bufferedReader.readLine();</span></span><br><span class="line">          stringBuilder.append(saveData);</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<p>于是在网上查了一下两者区别，不是很明白，先记下吧。</p>
+<blockquote>
+<p>ready是查看流是否已经准备好被读，是一个非阻塞的方法，所以会立刻返回，由于服务器没有准备好被读，所以会立刻返回，所以读取到的都是null，那么我们用while((str = reader.readLine()) != null)进行读取呢，readLine是一个阻塞的方法，只要没有断开连接，就会一直等待，直到有东西返回，那么什么时候返回空呢，只有读到数据流最末尾，才返回null   ，举例如，一般只有在读到文件末尾时才会是空，至于读取服务器端的数据，一般不会是空，那么有时候我们采用特定的字符来代表结束，在网络上，一直等待输入，即使是对方什么也不输入，只是回车，readline也不会返回null，如果I/O中断，会返回I/O异常，还是不会返回null   除非你使用的数据流有固定长度（比如文件数据流，或者ByteArrayInputStream之类），而不是网络数据流（阻塞模式）。   在I/O阻塞模式下，你写的条件循环，是不合理的：   while((line   =   in.readLine())   !=   null)<br>应该如下：   while(网络状态）//状态可由从客户端读入数据时捕捉I/O异常来获取，所以如果要编写多用户服务程序，最好使用java.nio，他对这方面的处理会比单纯的阻塞IO会更好。</p>
+<p>同理，InputStream的available也是非阻塞的，在网络中，很可能流延迟传输（而不是到达不了，服务器端很容易使用这样的代码，而是应用发生错误：<br>byte[] bytes = new byte[in.available()];<br>in.read(bytes);<br>结果是错误的,因为available返回的是0<br>那么解决方法有很多，比如可以一个一个字节的读，或者一个缓存大小字节的读，每次读都是阻塞方式的。所以可以放心</p>
+</blockquote>
+<p><strong>注释④</strong><br>做了一个简单实验</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        edit_username = (EditText)findViewById(R.id.edit_username);</span><br><span class="line">        btn_login = (Button)findViewById(R.id.btn_login);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        edit_username.setText(<span class="string">"111"</span>);</span><br><span class="line">        <span class="keyword">final</span> String sss = edit_username.getText().toString();<span class="comment">//编译的时候会自动加上final</span></span><br><span class="line"></span><br><span class="line">        btn_login.setOnClickListener(<span class="keyword">new</span> View.OnClickListener()</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="annotation">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span></span><br><span class="line">            </span>&#123;</span><br><span class="line"><span class="comment">//                System.out.println(edit_username.getText());</span></span><br><span class="line">                Log.d(<span class="string">"xxx"</span>, edit_username.getText().toString());</span><br><span class="line">                Log.d(<span class="string">"xxx"</span>, sss);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//运行后手动将值改为222；结果是：111；222</span></span><br><span class="line">    <span class="comment">//可以看到一旦赋值后，值就不会变了！相当于把一开始的值保存了下来，然后判断这个保存的值，sb！</span></span><br></pre></td></tr></table></figure>
+<p>从上面可以看出如果把username放在了外面，那么edit_username.getText()将开始的空值放在了username里，此时username的值为空，那么下面判断username根本没有意义，因为还是空值。<br>所以，要么把username的定义赋值放在button监听中，要么不要定义username，直接以edit_username.getText()作为判断依据。但是这里需要多次用到username，所以在button监听里赋值一次最好。</p>
+<p>其实这里还可以看出Android在OnCreate()里的代码也是可以实时监听的，因为我手动修改Edit控件，在OnCreate()里也可以打印出来。这和unity不一样。unity有明确的函数执行顺序，只有Update类的函数才可以实时运行监听。</p>
+<h4 id="总结">总结</h4><p>从代码可以看出文件存储比较麻烦，而且文件存储并不关心数据类型，我这里都是按字符来处理的。比如我想用布尔类型的时候，就需要转化，很是蛋疼。于是记住密码的那个控件没有用。所以这里实现的功能仅仅是记住了账号，用户登录时，还得自己填写密码。</p>
+<h2 id="SharedPreferences存储">SharedPreferences存储</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.demoniaccube.chobits.login;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.app.Activity;</span><br><span class="line"><span class="keyword">import</span> android.content.SharedPreferences;</span><br><span class="line"><span class="keyword">import</span> android.os.Bundle;</span><br><span class="line"><span class="keyword">import</span> android.view.View;</span><br><span class="line"><span class="keyword">import</span> android.widget.Button;</span><br><span class="line"><span class="keyword">import</span> android.widget.CheckBox;</span><br><span class="line"><span class="keyword">import</span> android.widget.EditText;</span><br><span class="line"><span class="keyword">import</span> android.widget.Toast;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> EditText edit_username;</span><br><span class="line">    <span class="keyword">private</span> EditText edit_password;</span><br><span class="line">    <span class="keyword">private</span> Button btn_login;</span><br><span class="line">    <span class="keyword">private</span> CheckBox cb_remember;</span><br><span class="line">    SharedPreferences sp = <span class="keyword">null</span>;</span><br><span class="line">    SharedPreferences.Editor editor = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        edit_username = (EditText)findViewById(R.id.edit_username);</span><br><span class="line">        edit_password = (EditText)findViewById(R.id.edit_password);</span><br><span class="line">        btn_login = (Button)findViewById(R.id.btn_login);</span><br><span class="line">        cb_remember = (CheckBox)findViewById(R.id.isRememberPassword);</span><br><span class="line">        sp = getSharedPreferences(<span class="string">"data"</span>, MODE_PRIVATE);</span><br><span class="line">        <span class="keyword">boolean</span> isRemember = sp.getBoolean(<span class="string">"isRem"</span>, <span class="keyword">false</span>);</span><br><span class="line">        <span class="keyword">if</span> (isRemember)</span><br><span class="line">        &#123;</span><br><span class="line">            String username = sp.getString(<span class="string">"user"</span>, <span class="string">""</span>);</span><br><span class="line">            String password = sp.getString(<span class="string">"pass"</span>, <span class="string">""</span>);</span><br><span class="line">            edit_username.setText(username);</span><br><span class="line">            edit_password.setText(password);</span><br><span class="line">            cb_remember.setChecked(<span class="keyword">true</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        btn_login.setOnClickListener(<span class="keyword">new</span> View.OnClickListener()</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="annotation">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span></span><br><span class="line">            </span>&#123;</span><br><span class="line">                String username = edit_username.getText().toString();</span><br><span class="line">                String password = edit_password.getText().toString();</span><br><span class="line">                <span class="keyword">if</span> (username.equals(<span class="string">"aaa"</span>) &amp;&amp; password.equals(<span class="string">"111"</span>))</span><br><span class="line">                &#123;</span><br><span class="line">                    editor = sp.edit();</span><br><span class="line">                    <span class="keyword">if</span> (cb_remember.isChecked())</span><br><span class="line">                    &#123;</span><br><span class="line">                        editor.putString(<span class="string">"user"</span>, username);</span><br><span class="line">                        editor.putBoolean(<span class="string">"isRem"</span>, <span class="keyword">true</span>);</span><br><span class="line">                        editor.putString(<span class="string">"pass"</span>, password);</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span></span><br><span class="line">                    &#123;</span><br><span class="line">                        editor.clear();</span><br><span class="line">                    &#125;</span><br><span class="line">                    editor.commit();</span><br><span class="line">                    Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"登陆成功"</span>, Toast.LENGTH_SHORT).show();</span><br><span class="line">                &#125; <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"登陆失败"</span>, Toast.LENGTH_SHORT).show();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>SharedPreferences存储分三步走：<br>一、创建SharedPreferences和SharedPreferences.Editor两个类；<br>二、用SharedPreferences.Editor的putXXX(“键值”，输入的值)方法来存数据；存完后要用commit()方法来提交；<br>三、用SharedPreferences的getXXX(“键值”，默认值)方法来取数据；</p>
+<h1 id="后记">后记</h1><p><strong>数据库存储</strong>内容太多了，放在这里就有点累赘了。有时间单独写一个SQList的记录吧。<br>学习了一个月的Android，接触了很多概念和类。关于UI，数据存储，线程，四大组件等等都接触了一些。现在对于Android感觉都会一点，但是写的时候又有些心有余而力不足。这只能说明一点，看的还不够细致，理解的不够透彻，练的不够多。<br>本来学习Android的初衷是想多了解移动端，这样做移动端游戏的时候，不至于完全不懂Android的知识。其次是，万一unity的工作找不到，还可以转战Android。不过一个月的学习，也找到了很多不足，比如数据库方面、java方面、数据存储、网络方面。感觉很多技术都是相通的。计划现在到过年的这段时间，Android和unity的时间平均分吧。每天练一点Android，复习复习unity以前记过的笔记和写过的代码。到二月低的目标是Android做一个关于制定计划的app；unity方面，复习以前的知识+学习一下unity的数据存储、网络、渲染等以前没涉及到的知识+开始着手做VR的游戏。</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/android/" rel="tag">#android</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/19/java字符流读取字符/" rel="next">java字符流读取字符</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="2015/12/29/Android之数据存储/"
+                   data-title="Android之数据存储" data-url="http://demoniaccube.github.io/2015/12/29/Android之数据存储/">
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/avatar.jpg" alt="徐墨轩" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">徐墨轩</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">在平凡中坚持前行，总有一天会偶遇不平凡的自己</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">标签</span>
+              
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/DemoniacCube" target="_blank">github</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/234112133" target="_blank">weibo</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.manew.com/blog-42778.html" target="_blank">manew</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文件存储"><span class="nav-number">2.1.</span> <span class="nav-text">文件存储</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">2.1.0.1.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SharedPreferences存储"><span class="nav-number">2.2.</span> <span class="nav-text">SharedPreferences存储</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后记"><span class="nav-number">3.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">徐墨轩</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"xiaobonotes"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>

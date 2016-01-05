@@ -189,6 +189,95 @@
           
           
             
+              <a class="post-title-link" href="/2015/12/29/Android之数据存储/" itemprop="url">
+                Android之数据存储
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-12-29T16:55:38+08:00" content="2015-12-29">
+            2015-12-29
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Android练习/" itemprop="url" rel="index">
+                  <span itemprop="name">Android练习</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/12/29/Android之数据存储/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/29/Android之数据存储/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h1 id="前言">前言</h1><p>数据存储，说实话，从学习C的C#都没有注意过，一直到用unity做游戏的时候，突然意识到，我的数据都是临时的，我怎么把数据写到硬盘里，下次用的时候再去取呢？好吧，实在有些惭愧。这次学Android，终于和数据存储这个话题，面对面了。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/12/29/Android之数据存储/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/12/19/java字符流读取字符/" itemprop="url">
                 java字符流读取字符
               </a>
@@ -987,99 +1076,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/11/18/Android练习之活动/" itemprop="url">
-                Android练习之Activity活动
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-11-18T11:02:24+08:00" content="2015-11-18">
-            2015-11-18
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Android练习/" itemprop="url" rel="index">
-                  <span itemprop="name">Android练习</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/11/18/Android练习之活动/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/18/Android练习之活动/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h2 id="前言">前言</h2><p>找到一本不错的书——《第一行代码Android》，虽然是基于4.X版本的，但还有很多知识没有变，当然也还有一些东西变化了。所以决定用Android Studio1.4单刷第一行代码Android。</p>
-<h2 id="隐藏标题栏">隐藏标题栏</h2><p>在安卓4.x可以使用以下两种方法隐藏标题栏：<br>1、在代码中实现：<br>在此方法<code>setContentView（R.layout.main）</code>之前加入：<br><code>requestWindowFeature(Window.FEATURE_NO_TITLE)</code>;标题栏就没有了。</p>
-<p>2、在AndroidManifest.xml中实现：<br>注册Activity时加上如下的一句配置就可以实现。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">activity</span>  </span><br><span class="line">		<span class="attribute">android:name</span>=<span class="value">".MainActivity"</span></span><br><span class="line">		<span class="attribute">android:theme</span>=<span class="value">"@android:style/Theme.NoTitleBar"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">activity</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>但是从5.0起，这两个方法就不起作用了，出现空指针的错误。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/11/18/Android练习之活动/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1118,7 +1114,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1180,7 +1176,7 @@
       <div class="footer-inner"> <div class="copyright" >
   
   &copy; &nbsp; 
-  <span itemprop="copyrightYear">2015</span>
+  <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
     <i class="icon-next-heart"></i>
   </span>
