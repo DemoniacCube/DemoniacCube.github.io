@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="java," />
+  <meta name="keywords" content="android," />
 
 
 
@@ -39,16 +39,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="java字节流读取一个字符">
+<meta name="description" content="今天看到《第一行代码》的通知栏部分，发现他的方法已经过时了，官方推荐使用Notification.Builder而不是Notification类了，而在设置通知布局样式的时候也该了很多。但大体思路一致，都是使用了Notification类来设置通知和NotificationManager类来管理通知。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java字节流读取字符">
-<meta property="og:url" content="http://demoniaccube.github.io/2015/12/19/java字节流读取字符/index.html">
+<meta property="og:title" content="Android通知栏Notification的用法">
+<meta property="og:url" content="http://demoniaccube.github.io/2016/01/13/Android通知栏Notification的用法/index.html">
 <meta property="og:site_name" content="Smallbo's Notes">
-<meta property="og:description" content="java字节流读取一个字符">
-<meta property="og:updated_time" content="2015-12-20T12:34:18.682Z">
+<meta property="og:description" content="今天看到《第一行代码》的通知栏部分，发现他的方法已经过时了，官方推荐使用Notification.Builder而不是Notification类了，而在设置通知布局样式的时候也该了很多。但大体思路一致，都是使用了Notification类来设置通知和NotificationManager类来管理通知。">
+<meta property="og:updated_time" content="2016-01-13T05:54:16.898Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java字节流读取字符">
-<meta name="twitter:description" content="java字节流读取一个字符">
+<meta name="twitter:title" content="Android通知栏Notification的用法">
+<meta name="twitter:description" content="今天看到《第一行代码》的通知栏部分，发现他的方法已经过时了，官方推荐使用Notification.Builder而不是Notification类了，而在设置通知布局样式的时候也该了很多。但大体思路一致，都是使用了Notification类来设置通知和NotificationManager类来管理通知。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -60,7 +60,7 @@
 
 
 
-  <title> java字节流读取字符 | Smallbo's Notes </title>
+  <title> Android通知栏Notification的用法 | Smallbo's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -188,7 +188,7 @@
           
           
             
-              java字节流读取字符
+              Android通知栏Notification的用法
             
           
         </h1>
@@ -197,8 +197,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-12-19T16:09:46+08:00" content="2015-12-19">
-            2015-12-19
+          <time itemprop="dateCreated" datetime="2016-01-13T13:13:37+08:00" content="2016-01-13">
+            2016-01-13
           </time>
         </span>
 
@@ -207,8 +207,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Java练习/" itemprop="url" rel="index">
-                  <span itemprop="name">Java练习</span>
+                <a href="/categories/Android笔记/" itemprop="url" rel="index">
+                  <span itemprop="name">Android笔记</span>
                 </a>
               </span>
 
@@ -223,8 +223,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/12/19/java字节流读取字符/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/19/java字节流读取字符/" itemprop="commentsCount"></span>
+              <a href="/2016/01/13/Android通知栏Notification的用法/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/13/Android通知栏Notification的用法/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -239,17 +239,8 @@
       
 
       
-        <span itemprop="articleBody"><h3 id="java字节流读取一个字符">java字节流读取一个字符</h3><a id="more"></a>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTest</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span><br><span class="line">	</span>&#123;</span><br><span class="line">		File f = <span class="keyword">new</span> File(<span class="string">"E:\\text.txt"</span>);</span><br><span class="line">		<span class="keyword">try</span></span><br><span class="line">		&#123;</span><br><span class="line">			FileInputStream fis = <span class="keyword">new</span> FileInputStream(f);</span><br><span class="line">			System.out.println((<span class="keyword">char</span>)fis.read());</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">catch</span>(Exception e)&#123;&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="java字节流读取多个字符">java字节流读取多个字符</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTest</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span><br><span class="line">	</span>&#123;</span><br><span class="line">		File f1 = <span class="keyword">new</span> File(<span class="string">"E:\\text.txt"</span>);</span><br><span class="line">		<span class="keyword">byte</span>[] b = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];<span class="comment">//利用byte将字节保存起来，然后利用String一起输出。</span></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">try</span></span><br><span class="line">		&#123;</span><br><span class="line">			FileInputStream fis = <span class="keyword">new</span> FileInputStream(f1);</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">int</span> len = fis.available();</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">			&#123;</span><br><span class="line">				fis.read(b);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.print(<span class="keyword">new</span> String(b));</span><br><span class="line">			fis.close();<span class="comment">//这句省掉也可以，close的作用是关闭流以及有flush的作用。字符流的输出就需要用到这个了</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">catch</span>(Exception e)&#123;&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上面在“读取多个字符”的时候用到了<code>int len = fis.available();</code>；<br>available()的值并不是fis的长度，而是剩下字节的长度。所以每次读取都会减少，但在第一次读的时候，是整个fis的长度。这里利用一个临时的int将其保存起来用作for循环的判断。</p>
-<p>另外，在txt文本中输入汉字时，打印的文字出现了乱码的现象。然后，在学校的机子上写字符流的时候没出现乱码，曾误以为这是字符流和字节流的区别之一。后来，到自己的机子上写字符流的时候居然也出现了乱码，困惑了很久，在网上查了一下，于是改了eclipse的工程文本格式为utf-8，没啥效果。也用了在代码里设置文件为“utf-8”，依然没用。后来意识到是不是txt的格式问题，于是另存为的时候改为了utf-8格式，然后就OK了。哎，也是记事本的坑啊！这才意识到上次在学校机子上试的文本格式（直接用的桌面上的一个txt，而不是自己创建的）可能是“utf-8”或者unicode格式的！<br>好吧，这也是偷懒的下场。</p>
-<h3 id="java字节流复制大文件">java字节流复制大文件</h3><p>这里用字节流复制一个50M的rar压缩文件。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTest</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span><br><span class="line">	</span>&#123;</span><br><span class="line">		File f1 = <span class="keyword">new</span> File(<span class="string">"G:\\AndroidCode.rar"</span>);</span><br><span class="line">		File f2 = <span class="keyword">new</span> File(<span class="string">"G:\\AndroidCode2.rar"</span>);</span><br><span class="line">		<span class="keyword">try</span></span><br><span class="line">		&#123;</span><br><span class="line">			FileInputStream fis = <span class="keyword">new</span> FileInputStream(f1);</span><br><span class="line">			FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(f2);</span><br><span class="line">			<span class="keyword">byte</span>[] b = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];<span class="comment">//用2的N次方，效率会高一点</span></span><br><span class="line">			<span class="comment">//每次fis.available()是文件的字节大小，这里是50M（50兆字节(mb)=52428800字节(b)）</span></span><br><span class="line">			<span class="keyword">int</span> len = fis.available()/<span class="number">1024</span> + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">			&#123;</span><br><span class="line">				fis.read(b);</span><br><span class="line">				fos.write(b);</span><br><span class="line">			&#125;</span><br><span class="line"><span class="comment">//			int size = fis.read(b);</span></span><br><span class="line"><span class="comment">//			fos.write(b, 0, size);</span></span><br><span class="line">			<span class="comment">//这两句是由于len+1，如果文件最后一次循环，不足1024B，那么依旧会写入1024，这就造成了空间的浪费。</span></span><br><span class="line">			<span class="comment">//而这两句的处理就是对最后一次循环的处理，比如，如果只多出50B，那么就写50B。</span></span><br><span class="line">			<span class="comment">//但是，我感觉没太大必要，除非你一次写入的几百兆的；而且我复制的时候，还和没加一样，都多出来一些空间</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">catch</span>(Exception e)&#123;&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>说一下子字节的转换吧。<br>1MB = 1024KB<br>1KB = 1024B<br>1B = 8b（B是byte字节；b是bit位）<br>1个字 = 2个字节</p>
-<p>关于字节和字符：<br><strong>字节(Byte):</strong>计算机中存储数据的单元，是一个很具体的存储空间。 0x01, 0x45, 0xFA, …… 1个字节等于8位二进制。<br><strong>字符：</strong> 人们使用的记号，抽象意义上的一个符号。 ‘1’, ‘中’, ‘a’, ‘$’, ‘￥’, …… </p>
-<p>由于不同编码所指定的标准是不同的，所以字符和字节的关系因根据不同语言所使用的具体编码来确定。<br><strong><em><fond color="red">比如：按照ANSI编码标准，标点符号、数字、大小写字母都占一个字节，汉字占2个字节。按照UNICODE标准所有字符都占2个字节。</fond></em></strong></p>
-<p>Java当中字符是采用Unicode编码标准；但这是在jvm中的，程序的编码还得看IDE的具体编码设置。</p>
+        <span itemprop="articleBody"><p>今天看到《第一行代码》的通知栏部分，发现他的方法已经过时了，官方推荐使用Notification.Builder而不是Notification类了，而在设置通知布局样式的时候也该了很多。但大体思路一致，都是使用了Notification类来设置通知和NotificationManager类来管理通知。<br><a id="more"></a><br>于是在网上查了一下他的用法，虽然说官方文档才是正统，但密密麻麻的英文理解起来确实有些费劲（好吧，应该加强自己的英文阅读能力了！）。我一般的习惯是遇到不懂的类或者没见过的类，首先查看API，如果看不懂就去百度搜索这个类，看看有没有大神写过详细博客什么的。即使有时候能看懂文档，也会去百度搜搜，看看理解有没有偏差。<br>其实，我遇到的问题，大部分情况下，在网上都能查到答案。可见问题的普遍性以及自己还很菜，还有很多常见的问题没有解决。</p>
+<p>关于通知的内容<a href="http://blog.csdn.net/vipzjyno1/article/details/25248021" target="_blank" rel="external">这篇博客</a>写的很清楚。<br>也看了一下他的其他博客，写的都很不错！值得推荐~</p>
 </span>
       
     </div>
@@ -258,7 +249,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag">#java</a>
+            <a href="/tags/android/" rel="tag">#android</a>
           
         </div>
       
@@ -267,13 +258,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/12/19/java字符流读取字符/" rel="prev">java字符流读取字符</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/11/java中的super和重写/" rel="next">java中的super和重写</a>
+              <a href="/2016/01/11/Service的start和bind启动服务/" rel="next">Service的start和bind启动服务</a>
             
           </div>
         </div>
@@ -298,8 +287,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/12/19/java字节流读取字符/"
-                   data-title="java字节流读取字符" data-url="http://demoniaccube.github.io/2015/12/19/java字节流读取字符/">
+              <div class="ds-thread" data-thread-key="2016/01/13/Android通知栏Notification的用法/"
+                   data-title="Android通知栏Notification的用法" data-url="http://demoniaccube.github.io/2016/01/13/Android通知栏Notification的用法/">
               </div>
             
           </div>
@@ -395,7 +384,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#java字节流读取一个字符"><span class="nav-number">1.</span> <span class="nav-text">java字节流读取一个字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java字节流读取多个字符"><span class="nav-number">2.</span> <span class="nav-text">java字节流读取多个字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java字节流复制大文件"><span class="nav-number">3.</span> <span class="nav-text">java字节流复制大文件</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

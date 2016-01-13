@@ -189,6 +189,95 @@
           
           
             
+              <a class="post-title-link" href="/2016/01/13/Android通知栏Notification的用法/" itemprop="url">
+                Android通知栏Notification的用法
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2016-01-13T13:13:37+08:00" content="2016-01-13">
+            2016-01-13
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Android笔记/" itemprop="url" rel="index">
+                  <span itemprop="name">Android笔记</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/01/13/Android通知栏Notification的用法/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/13/Android通知栏Notification的用法/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>今天看到《第一行代码》的通知栏部分，发现他的方法已经过时了，官方推荐使用Notification.Builder而不是Notification类了，而在设置通知布局样式的时候也该了很多。但大体思路一致，都是使用了Notification类来设置通知和NotificationManager类来管理通知。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/01/13/Android通知栏Notification的用法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2016/01/11/Service的start和bind启动服务/" itemprop="url">
                 Service的start和bind启动服务
               </a>
@@ -984,101 +1073,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/11/21/BaseAdapter适配器的使用与优化/" itemprop="url">
-                Android笔记之BaseAdapter适配器的使用与优化
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-11-21T13:43:56+08:00" content="2015-11-21">
-            2015-11-21
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Android/" itemprop="url" rel="index">
-                  <span itemprop="name">Android</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/11/21/BaseAdapter适配器的使用与优化/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/21/BaseAdapter适配器的使用与优化/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h2 id="ListView缓存机制">ListView缓存机制</h2><h3 id="什么是数据适配器">什么是数据适配器</h3><p><strong>适配器</strong>是AdapterView视图（如ListView - 列表视图控件、Gallery - 缩略图浏览器控件、GridView - 网格控件、Spinner - 下拉列表控件、AutoCompleteTextView - 自动提示文本框、ExpandableListView - 支持展开/收缩功能的列表控件等）与数据之间的桥梁，用来处理数据并将数据绑定到AdapterView上。</p>
-<p><strong><em>AdapterView</em></strong>对象有两个<strong>主要任务</strong></p>
-<ol>
-<li>在布局中显示数据</li>
-<li>处理用户的选择</li>
-</ol>
-<p>数据源的来源是各种各样的，而ListView所展示的格式是有一定要求的。数据适配器正是建立了数据源与ListView之间的适配关系，将数据源转换成ListView能够显示的数据格式，从而将数据的来源和数据的显示进行了解耦，降低了程序的耦合性，让程序更加容易拓展。<br>android提供多种适配器，开发时可以针对数据源的不同采用最方便的适配器，也可以自定义适配器完成复杂功能。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/11/21/BaseAdapter适配器的使用与优化/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1117,14 +1111,14 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
