@@ -189,6 +189,188 @@
           
           
             
+              <a class="post-title-link" href="/2015/11/23/Android笔记之AsyncTask基础/" itemprop="url">
+                Android笔记之AsyncTask基础
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-11-23T19:25:50+08:00" content="2015-11-23">
+            2015-11-23
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Android/" itemprop="url" rel="index">
+                  <span itemprop="name">Android</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/11/23/Android笔记之AsyncTask基础/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/23/Android笔记之AsyncTask基础/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h2 id="AsyncTask的基本构成">AsyncTask的基本构成</h2><h3 id="AsyncTask概述">AsyncTask概述</h3><h4 id="为什么要异步任务">为什么要异步任务</h4><ol>
+<li>Android中，只有主线程可以对UI进行操作，而其他线程是不可以直接操作UI的。这用做的好处是保证了UI的稳定性和准确性。避免了多线程同时对UI进行操作，而造成对UI的一个混乱。</li>
+<li>安卓是个多线程的系统，我们不可能把所有的事情都放在主线程中。比如一些网络操作、读取文件等一些耗时的操作。如果把这些操作都放在了主线程中，就会造成阻塞，从用户的角度，就会感觉这个App很卡或者未响应。所以，应该把耗时的操作放在非主线程中。
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/11/23/Android笔记之AsyncTask基础/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/11/21/学习Android遇到的问题之LayoutInflater/" itemprop="url">
+                学习Android遇到的问题——LayoutInflater
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-11-21T15:23:56+08:00" content="2015-11-21">
+            2015-11-21
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Android/" itemprop="url" rel="index">
+                  <span itemprop="name">Android</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/11/21/学习Android遇到的问题之LayoutInflater/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/21/学习Android遇到的问题之LayoutInflater/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h2 id="前言">前言</h2><p>对于像我这样的android初学者来说，LayoutInflater是个很模糊的概念，<em>I can’t feel it！</em>我只知道在自定义控件的时候构造函数中会用到<code>LayoutInflater.from(mContext).inflater(layout_id, this)；</code>还有重写 适配器布局会用到<code>LayoutInflater.from(getContext()).inflater(layout_id, null)</code>。</p>
+<p>从字面的意思来看，Layout是布局的意思，Inflater是充气器的意思；连起来就是布局充气器，或者布局填充器，也有人说是布局加载器。</p>
+<p>而我现在对于LayoutInflater的理解也仅仅是他可以将xml布局实例化为View对象。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/11/21/学习Android遇到的问题之LayoutInflater/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/11/21/BaseAdapter适配器的使用与优化/" itemprop="url">
                 Android笔记之BaseAdapter适配器的使用与优化
               </a>
@@ -943,7 +1125,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -957,7 +1139,7 @@
 
           <div class="site-state-item site-state-tags">
             
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">标签</span>
               
           </div>

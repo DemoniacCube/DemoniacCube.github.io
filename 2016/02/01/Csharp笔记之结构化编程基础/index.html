@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="android," />
+  <meta name="keywords" content="C#," />
 
 
 
@@ -39,22 +39,23 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="使用TextView实现文字滚动效果两步：一、控件属性添加
-12345&amp;lt;包名.继承TextView的类名	android:singleLine=&quot;true&quot;	android:ellipsize=&quot;marquee&quot;	android:focusable=&quot;true&quot;	android:focusableInTouchMode=&quot;true&quot;/&amp;gt;
-二、新建一个类，继承TextView并重写isF">
+<meta name="description" content="变量、数据类型与表达式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android练习之UI">
-<meta property="og:url" content="http://demoniaccube.github.io/2015/11/20/Android练习之UI/index.html">
+<meta property="og:title" content="Csharp笔记之结构化编程基础">
+<meta property="og:url" content="http://demoniaccube.github.io/2016/02/01/Csharp笔记之结构化编程基础/index.html">
 <meta property="og:site_name" content="Smallbo's Notes">
-<meta property="og:description" content="使用TextView实现文字滚动效果两步：一、控件属性添加
-12345&amp;lt;包名.继承TextView的类名	android:singleLine=&quot;true&quot;	android:ellipsize=&quot;marquee&quot;	android:focusable=&quot;true&quot;	android:focusableInTouchMode=&quot;true&quot;/&amp;gt;
-二、新建一个类，继承TextView并重写isF">
-<meta property="og:updated_time" content="2015-12-20T09:28:00.372Z">
+<meta property="og:description" content="变量、数据类型与表达式">
+<meta property="og:image" content="http://pic.ffsky.net/images/2016/02/01/0191a94a88feb9a57456486641b452f8.jpg">
+<meta property="og:image" content="http://pic.ffsky.net/images/2016/02/01/5583508337e525fbb925a80c306ef994.jpg">
+<meta property="og:image" content="http://pic.ffsky.net/images/2016/02/01/91406992a1ad62a127d3ed19777c5de0.png">
+<meta property="og:image" content="http://pic.ffsky.net/images/2016/02/01/7468e7d28827bc21d2928876b01f401c.png">
+<meta property="og:image" content="http://pic.ffsky.net/images/2016/02/01/1276d3ec713249ff1e8e6fcf275514dd.jpg">
+<meta property="og:image" content="http://pic.ffsky.net/images/2016/02/01/99f7ef29ab2a60a1961790021a1772c0.png">
+<meta property="og:image" content="http://pic.ffsky.net/images/2016/02/01/56434954482545efcb0711f0eaee1d79.png">
+<meta property="og:updated_time" content="2016-02-02T13:38:51.619Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android练习之UI">
-<meta name="twitter:description" content="使用TextView实现文字滚动效果两步：一、控件属性添加
-12345&amp;lt;包名.继承TextView的类名	android:singleLine=&quot;true&quot;	android:ellipsize=&quot;marquee&quot;	android:focusable=&quot;true&quot;	android:focusableInTouchMode=&quot;true&quot;/&amp;gt;
-二、新建一个类，继承TextView并重写isF">
+<meta name="twitter:title" content="Csharp笔记之结构化编程基础">
+<meta name="twitter:description" content="变量、数据类型与表达式">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -66,7 +67,7 @@
 
 
 
-  <title> Android练习之UI | Smallbo's Notes </title>
+  <title> Csharp笔记之结构化编程基础 | Smallbo's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -194,7 +195,7 @@
           
           
             
-              Android练习之UI
+              Csharp笔记之结构化编程基础
             
           
         </h1>
@@ -203,8 +204,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-11-20T22:46:42+08:00" content="2015-11-20">
-            2015-11-20
+          <time itemprop="dateCreated" datetime="2016-02-01T19:43:50+08:00" content="2016-02-01">
+            2016-02-01
           </time>
         </span>
 
@@ -213,8 +214,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Android练习/" itemprop="url" rel="index">
-                  <span itemprop="name">Android练习</span>
+                <a href="/categories/C-笔记/" itemprop="url" rel="index">
+                  <span itemprop="name">C#笔记</span>
                 </a>
               </span>
 
@@ -229,8 +230,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/11/20/Android练习之UI/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/20/Android练习之UI/" itemprop="commentsCount"></span>
+              <a href="/2016/02/01/Csharp笔记之结构化编程基础/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/01/Csharp笔记之结构化编程基础/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -245,10 +246,28 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="使用TextView实现文字滚动效果">使用TextView实现文字滚动效果</h2><p>两步：<br>一、控件属性添加</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">包名.继承TextView的类名</span></span><br><span class="line">	<span class="attribute">android:singleLine</span>=<span class="value">"true"</span></span><br><span class="line">	<span class="attribute">android:ellipsize</span>=<span class="value">"marquee"</span></span><br><span class="line">	<span class="attribute">android:focusable</span>=<span class="value">"true"</span></span><br><span class="line">	<span class="attribute">android:focusableInTouchMode</span>=<span class="value">"true"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-<p>二、新建一个类，继承TextView并重写isFocused方法，即修改为：返回true。</p>
-</span>
+        <span itemprop="articleBody"><h1 id="变量、数据类型与表达式">变量、数据类型与表达式</h1><a id="more"></a>
+<h2 id="“给变量赋值”是什么意思">“给变量赋值”是什么意思</h2><p><img src="http://pic.ffsky.net/images/2016/02/01/0191a94a88feb9a57456486641b452f8.jpg" alt=""><br>这里我有个问题，老师说C#使用的是虚拟内存，那么C#不会用内存条，而是用硬盘里的虚拟内存？？？这显然是不对的，老师这里只是提了会用到虚拟内存，但我觉得一定会用到内存条。因为虚拟内存是在硬盘里的，程序只在虚拟内存中运行岂不是很变慢？设计者一定不会这么干！以前我一直以为声明变量都在内存条中申请的，但实际和虚拟内存有关系，至于是什么关系。我觉得这是我对内存条和虚拟内存之间的关系和观念模糊导致的。看了一下百度的解释，很模糊。现在就单纯的认为C#声明变量用到了内存条和虚拟内存吧。（在win8系统中，玩游戏时偶尔会出现内存不足的提示，但实际内存条才用到60%，他说的内存不足，应该是虚拟内存不足吧。后来升了win10就没出现过这个情况了）<br>网上查这方面的解释，很少，<a href="http://blog.sina.com.cn/s/blog_4b02ab3b01011ljw.html" target="_blank" rel="external">这篇文章</a>也只是稍微提一下。</p>
+<h2 id="变量之间的相互赋值该如何理解">变量之间的相互赋值该如何理解</h2><p><img src="http://pic.ffsky.net/images/2016/02/01/5583508337e525fbb925a80c306ef994.jpg" alt=""></p>
+<h2 id="数据类型">数据类型</h2><h3 id="数据类型分类">数据类型分类</h3><p><img src="http://pic.ffsky.net/images/2016/02/01/91406992a1ad62a127d3ed19777c5de0.png" alt=""><br><strong>注意：</strong><br>1、string是关键字，不可以设为变量名称，但如果要使用C#中的关键字作为变量名称，必须添加前缀@<br>2、说到@，也提一下@的字符串用法：字符串前使用@，可以一字不变的指定字符串，如：@”E:\MyStudy\C#”这就比”E:\MyStudy\C#“好的多了）</p>
+<h3 id="C#中的常见数据类型">C#中的常见数据类型</h3><p>|———-|——————————|————–|———-|<br>| 数据类型 | 说明                         | 数值类型后缀 | 所占字节 |<br>| int      | 整型，用32位二进制数表达     | 无           | 4        |<br>| long     | 长整型，用64位二进制数表达   | l            | 8        |<br>| float    | 浮点型，用32位二进制数表达   | f            | 4        |<br>| double   | 双精度数，用64位二进制数表达 | d            | 8        |<br>| string   | 用于引用一个字符串对象       | 无           | 未知     |<br>|          |                              |              |          |<br><img src="http://pic.ffsky.net/images/2016/02/01/7468e7d28827bc21d2928876b01f401c.png" alt=""></p>
+<h3 id="获取数据类型">获取数据类型</h3><p>使用<strong><code>变量.GetType()</code></strong>方法可以获取变量的类型；<br>使用<strong><code>typeof</code></strong>运算符关键字可以检测特定的变量是否是特定的类型。如：</p>
+<pre><code><span class="keyword">int</span> intValue = <span class="number">100</span>;
+Console.<span class="keyword">WriteLine</span>(intValue.GetType());<span class="comment">//System.INt32</span>
+Console.<span class="keyword">WriteLIne</span>(IntValue.GetType() == typeof(<span class="keyword">int</span>));<span class="comment">//true</span>
+</code></pre><h3 id="值类型和引用类型">值类型和引用类型</h3><p><a href="http://www.cnblogs.com/tonney/archive/2011/04/28/2032205.html" target="_blank" rel="external">参考这篇文章</a><br><strong>注意：</strong>值类型不一定分配在栈上，比如引用类型对象里的值类型字段，还有被lambda表达式捕获的值类型变量。</p>
+<h3 id="String与string的区别">String与string的区别</h3><p>在C#中，定义字符串可以混用“String”或“string”，因为在编译时，C#会将他们都对应到.NET基类库所定义的标准“System.String”类型。但是习惯上，把字符串当作对象时（有值的对象实体），我们用string。而我们把它当类时（需要字符串类中定义的方法），我们用String，比如：string greet = String.Format(“Hello {0}!”, place);<br>在java中，只有String，没有小写的string。</p>
+<h3 id="var类型的使用">var类型的使用</h3><p><a href="http://pic.ffsky.net/images/2016/02/01/bcf3d97a171b3d89dcf36bcb01704ea0.jpg" target="_blank" rel="external"></a><br>其实，在我以前写过的代码中，基本没用过var，第一次接触var我记得是在JavaScript见到的，像phython这样的解释性语言中常见，但我觉得C#作为强类型语言，用var类型，代码的可读性就变差了，即不能直观的看出数据的类型。老师说“主要是省去了数据类型名称太长的情况，这在LINQ中常见”，我没有接触过，所以不好说，等我看到那部分再看看吧。</p>
+<h3 id="类型转换">类型转换</h3><p>显式（强制）转换和隐式转换很简单，这里主要记一下字符串与数值类型间的转换：<br><img src="http://pic.ffsky.net/images/2016/02/01/1276d3ec713249ff1e8e6fcf275514dd.jpg" alt=""><br>我习惯用两个To：<br>Convert.<strong>To</strong>Double(str)；string—-&gt;数值类型<br>intValue.<strong>To</strong>String();数值类型—-&gt;string</p>
+<p>提示：Convert类中有很多基本数据类型转换的方法。</p>
+<h2 id="运算符和表达式">运算符和表达式</h2><p><img src="http://pic.ffsky.net/images/2016/02/01/99f7ef29ab2a60a1961790021a1772c0.png" alt=""><br>运算符没啥好说，截个图也未必会看，一般的加减乘除，取余数用%就没了。至于i++和++i的问题，其实没必要，只要不把i++放到Console.Write这样的输出语句或者表达式（1+ ++i + i++）中就可以了。<br>不过也总结一下吧：i++是先赋值后自增，++i是先自增后赋值；这里需要知道i++是什么时候自增，在C#中前面的i++后，同一个表达式中下一个i已经自增过的了，这个C不一样！在C中是在这一语句执行完毕后才自增。如：</p>
+<pre><code><span class="keyword">int</span> i=<span class="number">3</span>;
+<span class="keyword">int</span> j=(i++)+(i++);
+Console.Write(<span class="string">"{0},{1}"</span>,i,j);
+</code></pre><p>结果是：5,7<br>当然了，其实实际开发中没人会这么干，只有考试会这么出。最常用的for循环语句最后的++i或者i++效果是一样的。</p>
+<p><strong>表达式：</strong>变量+常量+运算符=表达式；表达式最后一定会是一个值，可以看成是一个变量。</p>
+<h2 id="常见转义字符">常见转义字符</h2><p>讲到运算符也截个转义符的图吧<br><img src="http://pic.ffsky.net/images/2016/02/01/56434954482545efcb0711f0eaee1d79.png" alt=""></p>
+<h1 id="选择结构与逻辑表达式">选择结构与逻辑表达式</h1><h1 id="循环结构">循环结构</h1><h1 id="方法">方法</h1><h1 id="递归">递归</h1></span>
       
     </div>
 
@@ -256,7 +275,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/android/" rel="tag">#android</a>
+            <a href="/tags/C/" rel="tag">#C#</a>
           
         </div>
       
@@ -265,13 +284,13 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/11/21/BaseAdapter适配器的使用与优化/" rel="prev">Android笔记之BaseAdapter适配器的使用与优化</a>
+              <a href="/2016/02/01/Csharp笔记之学习前的准备知识/" rel="prev">Csharp笔记之学习前的准备知识</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/11/18/Android练习之活动/" rel="next">Android练习之Activity活动</a>
+              <a href="/2016/01/13/Android通知栏Notification的用法/" rel="next">Android通知栏Notification的用法</a>
             
           </div>
         </div>
@@ -296,8 +315,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/11/20/Android练习之UI/"
-                   data-title="Android练习之UI" data-url="http://demoniaccube.github.io/2015/11/20/Android练习之UI/">
+              <div class="ds-thread" data-thread-key="2016/02/01/Csharp笔记之结构化编程基础/"
+                   data-title="Csharp笔记之结构化编程基础" data-url="http://demoniaccube.github.io/2016/02/01/Csharp笔记之结构化编程基础/">
               </div>
             
           </div>
@@ -393,7 +412,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用TextView实现文字滚动效果"><span class="nav-number">1.</span> <span class="nav-text">使用TextView实现文字滚动效果</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#变量、数据类型与表达式"><span class="nav-number">1.</span> <span class="nav-text">变量、数据类型与表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#“给变量赋值”是什么意思"><span class="nav-number">1.1.</span> <span class="nav-text">“给变量赋值”是什么意思</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量之间的相互赋值该如何理解"><span class="nav-number">1.2.</span> <span class="nav-text">变量之间的相互赋值该如何理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">1.3.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型分类"><span class="nav-number">1.3.1.</span> <span class="nav-text">数据类型分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C#中的常见数据类型"><span class="nav-number">1.3.2.</span> <span class="nav-text">C#中的常见数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取数据类型"><span class="nav-number">1.3.3.</span> <span class="nav-text">获取数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#值类型和引用类型"><span class="nav-number">1.3.4.</span> <span class="nav-text">值类型和引用类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String与string的区别"><span class="nav-number">1.3.5.</span> <span class="nav-text">String与string的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#var类型的使用"><span class="nav-number">1.3.6.</span> <span class="nav-text">var类型的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型转换"><span class="nav-number">1.3.7.</span> <span class="nav-text">类型转换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符和表达式"><span class="nav-number">1.4.</span> <span class="nav-text">运算符和表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见转义字符"><span class="nav-number">1.5.</span> <span class="nav-text">常见转义字符</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#选择结构与逻辑表达式"><span class="nav-number">2.</span> <span class="nav-text">选择结构与逻辑表达式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#循环结构"><span class="nav-number">3.</span> <span class="nav-text">循环结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法"><span class="nav-number">4.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#递归"><span class="nav-number">5.</span> <span class="nav-text">递归</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
