@@ -49,6 +49,8 @@
 <meta property="og:image" content="http://pic.ffsky.net/images/2016/02/01/5583508337e525fbb925a80c306ef994.jpg">
 <meta property="og:image" content="http://pic.ffsky.net/images/2016/02/01/91406992a1ad62a127d3ed19777c5de0.png">
 <meta property="og:image" content="http://pic.ffsky.net/images/2016/02/01/7468e7d28827bc21d2928876b01f401c.png">
+<meta property="og:image" content="http://i13.tietuku.com/626a9226851a5ed2.jpg">
+<meta property="og:image" content="http://i13.tietuku.com/d2b7c4ee667fe59c.jpg">
 <meta property="og:image" content="http://pic.ffsky.net/images/2016/02/01/bcf3d97a171b3d89dcf36bcb01704ea0.jpg">
 <meta property="og:image" content="http://pic.ffsky.net/images/2016/02/01/1276d3ec713249ff1e8e6fcf275514dd.jpg">
 <meta property="og:image" content="http://pic.ffsky.net/images/2016/02/01/99f7ef29ab2a60a1961790021a1772c0.png">
@@ -66,7 +68,7 @@
 <meta property="og:image" content="http://i13.tietuku.com/47aae0a3675c359a.jpg">
 <meta property="og:image" content="http://i12.tietuku.com/71b528e7c048f318.jpg">
 <meta property="og:image" content="http://i13.tietuku.com/d2335c406cc9d1e4.jpg">
-<meta property="og:updated_time" content="2016-02-06T07:50:42.215Z">
+<meta property="og:updated_time" content="2016-02-06T08:07:06.886Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Csharp笔记之结构化编程基础">
 <meta name="twitter:description" content="变量、数据类型与表达式">
@@ -264,8 +266,8 @@
 <h2 id="“给变量赋值”是什么意思">“给变量赋值”是什么意思</h2><p><img src="http://pic.ffsky.net/images/2016/02/01/0191a94a88feb9a57456486641b452f8.jpg" alt=""><br>这里我有个问题，老师说C#使用的是虚拟内存，那么C#不会用内存条，而是用硬盘里的虚拟内存？？？这显然是不对的，老师这里只是提了会用到虚拟内存，但我觉得一定会用到内存条。因为虚拟内存是在硬盘里的，程序只在虚拟内存中运行岂不是很变慢？设计者一定不会这么干！以前我一直以为声明变量都在内存条中申请的，但实际和虚拟内存有关系，至于是什么关系。我觉得这是我对内存条和虚拟内存之间的关系和观念模糊导致的。看了一下百度的解释，很模糊。现在就单纯的认为C#声明变量用到了内存条和虚拟内存吧。（在win8系统中，玩游戏时偶尔会出现内存不足的提示，但实际内存条才用到60%，他说的内存不足，应该是虚拟内存不足吧。后来升了win10就没出现过这个情况了）<br>网上查这方面的解释，很少，<a href="http://blog.sina.com.cn/s/blog_4b02ab3b01011ljw.html" target="_blank" rel="external">这篇文章</a>也只是稍微提一下。</p>
 <h2 id="变量之间的相互赋值该如何理解">变量之间的相互赋值该如何理解</h2><p><img src="http://pic.ffsky.net/images/2016/02/01/5583508337e525fbb925a80c306ef994.jpg" alt=""></p>
 <h2 id="数据类型">数据类型</h2><h3 id="数据类型分类">数据类型分类</h3><p><img src="http://pic.ffsky.net/images/2016/02/01/91406992a1ad62a127d3ed19777c5de0.png" alt=""><br><strong>注意：</strong><br>1、string是关键字，不可以设为变量名称，但如果要使用C#中的关键字作为变量名称，必须添加前缀@<br>2、说到@，也提一下@的字符串用法：字符串前使用@，可以一字不变的指定字符串，如：@”E:\MyStudy\C#”这就比”E:\MyStudy\C#“好的多了）<br>3、string是引用类型</p>
-<h3 id="C#中的常见数据类型">C#中的常见数据类型</h3><p>|———-|——————————|————–|———-|<br>| 数据类型 | 说明                         | 数值类型后缀 | 所占字节 |<br>| int      | 整型，用32位二进制数表达     | 无           | 4        |<br>| long     | 长整型，用64位二进制数表达   | l            | 8        |<br>| float    | 浮点型，用32位二进制数表达   | f            | 4        |<br>| double   | 双精度数，用64位二进制数表达 | d            | 8        |<br>| string   | 用于引用一个字符串对象       | 无           | 未知     |<br>|          |                              |              |          |<br><img src="http://pic.ffsky.net/images/2016/02/01/7468e7d28827bc21d2928876b01f401c.png" alt=""></p>
-<h3 id="数有范围">数有范围</h3><p>这里需要特别注意一下数的范围，尤其是开发像计算器这样的软件。<br>因为计算机能表示的数是有范围的。<br><img src="" alt=""><br>看看下面的代码：</p>
+<h3 id="C#中的常见数据类型">C#中的常见数据类型</h3><p><img src="http://pic.ffsky.net/images/2016/02/01/7468e7d28827bc21d2928876b01f401c.png" alt=""></p>
+<h3 id="数有范围">数有范围</h3><p>这里需要特别注意一下数的范围，尤其是开发像计算器这样的软件。<br>因为计算机能表示的数是有范围的。<br><img src="http://i13.tietuku.com/626a9226851a5ed2.jpg" alt=""><br>看看下面的代码：</p>
 <pre><code><span class="keyword">double</span> i = <span class="number">0.0001</span>;
 <span class="keyword">double</span> j = <span class="number">0.000100000000000001</span>;
 Console.WriteLine(i==j);<span class="comment">//输出：true</span>
@@ -274,7 +276,7 @@ Console.WriteLine(i==j);<span class="comment">//输出：true</span>
     Console.<span class="keyword">WriteLine</span>(<span class="string">"true"</span>);
 <span class="keyword">else</span>
     Console.<span class="keyword">WriteLine</span>(<span class="string">"false"</span>);
-</code></pre><p>好在.NET在4.0以上版本中提供了一个BigInteger类，支持大整数的加减乘除运算。<br><img src="" alt=""></p>
+</code></pre><p>好在.NET在4.0以上版本中提供了一个BigInteger类，支持大整数的加减乘除运算。<br><img src="http://i13.tietuku.com/d2b7c4ee667fe59c.jpg" alt=""><br>但还是要用绝对值判断的范围的方法缩小误差。</p>
 <h3 id="获取数据类型">获取数据类型</h3><p>使用<strong><code>变量.GetType()</code></strong>方法可以获取变量的类型；<br>使用<strong><code>typeof</code></strong>运算符关键字可以检测特定的变量是否是特定的类型。如：</p>
 <pre><code><span class="keyword">int</span> intValue = <span class="number">100</span>;
 Console.<span class="keyword">WriteLine</span>(intValue.GetType());<span class="comment">//System.INt32</span>
@@ -432,7 +434,7 @@ Console.Write(<span class="string">"{0},{1}"</span>,i,j);
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
