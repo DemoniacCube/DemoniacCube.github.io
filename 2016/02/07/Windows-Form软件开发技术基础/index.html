@@ -39,15 +39,66 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="在平凡中坚持前行，总有一天会偶遇不平凡的自己">
-<meta property="og:type" content="website">
+<meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
+
+body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Smallbo's Notes">
-<meta property="og:url" content="http://demoniaccube.github.io/index.html">
+<meta property="og:url" content="http://demoniaccube.github.io/2016/02/07/Windows-Form软件开发技术基础/index.html">
 <meta property="og:site_name" content="Smallbo's Notes">
-<meta property="og:description" content="在平凡中坚持前行，总有一天会偶遇不平凡的自己">
+<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+
+body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome">
+<meta property="og:image" content="http://i11.tietuku.com/6945d9fe34314dca.jpg">
+<meta property="og:image" content="http://i11.tietuku.com/5e903d8368833794.jpg">
+<meta property="og:image" content="http://i11.tietuku.com/d4430bf69b454a43.jpg">
+<meta property="og:image" content="http://i11.tietuku.com/6e09f03b5a3a8dd4.jpg">
+<meta property="og:image" content="http://i11.tietuku.com/f6e2bb5ef2bd8e4d.jpg">
+<meta property="og:updated_time" content="2016-02-07T07:40:44.950Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Smallbo's Notes">
-<meta name="twitter:description" content="在平凡中坚持前行，总有一天会偶遇不平凡的自己">
+<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+
+body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -59,7 +110,7 @@
 
 
 
-  <title> Smallbo's Notes </title>
+  <title>  | Smallbo's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -90,9 +141,7 @@
 
 
 
-  <div class="container one-column 
-   page-home 
-">
+  <div class="container one-column page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -176,9 +225,9 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div id="content" class="content"> 
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
@@ -189,9 +238,7 @@
           
           
             
-              <a class="post-title-link" href="/2016/02/07/Windows-Form软件开发技术基础/" itemprop="url">
-                未命名
-              </a>
+              
             
           
         </h1>
@@ -227,8 +274,7 @@
       
 
       
-        
-          <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="date" content="2016-02-06 15:55:00">
+        <span itemprop="articleBody"><!DOCTYPE html><html><head><meta charset="utf-8"><meta name="date" content="2016-02-06 15:55:00">
 <meta name="categories" content="C#笔记">
 <meta name="tags" content="C#"><style>body {
   width: 45em;
@@ -1247,12 +1293,73 @@ body .markdown-body
   }
 }
 </style><title>Windows Form软件开发技术基础</title></head><body><article class="markdown-body"><h1 id="visual-studiogui"><a name="user-content-visual-studiogui" href="#visual-studiogui" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>使用Visual Studio编写GUI程序</h1>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/02/07/Windows-Form软件开发技术基础/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
+<a id="more"></a>
+
+<h2 id="windows"><a name="user-content-windows" href="#windows" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>编写windows窗体应用程序</h2>
+<p>选择，文件&ndash;&gt;新建项目&ndash;&gt;Visual C#&ndash;&gt;Windows&ndash;&gt;Windows窗体应用程序；<br>
+新建，Windows窗体应用程序；<br>
+工具箱中拖取控件，在属性中查看或更改属性；Name是控件的名称（在代码中需要引用），text是显示在窗体上的标题。</p>
+<p>一般地，双击控件可以编辑相应控件的代码。<br>
+另外，在解决方案的项目中可以打开Properties改变默认图标。如果图标没变，在项目上右击鼠标选择生成即可。</p>
+<h2 id="rad"><a name="user-content-rad" href="#rad" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>RAD</h2>
+<p>像这样，具有“所见即所得”的特点，这种开发方式，被称为RAD（快速应用开发）模式。<br>
+而RAD开发方式，最适合于规模小，功能简单的带有“演示”性质的程序。不适合大型软件开发。</p>
+<h1 id="winform"><a name="user-content-winform" href="#winform" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>常用WinForm控件使用</h1>
+<h2 id="button"><a name="user-content-button" href="#button" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Button控件的几个属性</h2>
+<p>1、Image：按钮上显示的图像（分为本地和已导入资源，两种都可以，导入资源适合重复利用的资源，导入资源在Properties的资源选项中添加）<br>
+窗体form没有Image，但是有BackgroundImage属性。<br>
+2、FlatAppearance：用于指示复选状态和鼠标状态的边框外观和颜色。<br>
+3、确定当用户将鼠标移动到控件上并单击时该控件的外观。</p>
+<h2 id="label"><a name="user-content-label" href="#label" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Label控件的几个属性</h2>
+<p>1、Fond：字体样式<br>
+2、AutoSize：指定控件是否自动调整自身的大小一适应其内容的大小。（true时字的大小会根据控件大小自动调整）<br>
+3、backColor：组件的背景色，设置为web里的transparent可以使组件背景色透明。<br>
+4、Image：和按钮控件用法一样<br>
+5、TextAlign：设置字的位置（对齐方式）</p>
+<h2 id="linklabel"><a name="user-content-linklabel" href="#linklabel" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>LinkLabel</h2>
+<p>LinkLabel = Label + Button</p>
+<h2 id="textbox"><a name="user-content-textbox" href="#textbox" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TextBox</h2>
+<p>文本框控件主要用于提供用户输入，它是TextBox类的对象</p>
+<h2 id="radiobutton"><a name="user-content-radiobutton" href="#radiobutton" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>RadioButton</h2>
+<p>单选按钮</p>
+<h2 id="checkbox"><a name="user-content-checkbox" href="#checkbox" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CheckBox</h2>
+<p>复选按钮</p>
+<h2 id="progressbar"><a name="user-content-progressbar" href="#progressbar" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ProgressBar</h2>
+<p>进度条属性：Maximum、minimum、Value（当前值）</p>
+<h2 id="timer"><a name="user-content-timer" href="#timer" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Timer</h2>
+<p>Enabled：“启动”或“停止”调用<br>
+Interval：每隔多长时间（毫秒）调用一次</p>
+<h2 id="numericupdown"><a name="user-content-numericupdown" href="#numericupdown" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>NumericUpDown</h2>
+<p>数字输入控件</p>
+<h2 id="picturebox"><a name="user-content-picturebox" href="#picturebox" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>PictureBox</h2>
+<p>图片框</p>
+<h2 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>怎样学习一个新的控件</h2>
+<p>1、问一问<br>
+    这个控件是干什么的？<br>
+    这个控件有哪些重要属性？<br>
+    这个控件有哪些特定的方法，触发哪些特定的事件？<br>
+2、玩一玩<br>
+    编写小的示例代码，分块掌握控件的各个功能。关键是玩明白：石笋这个控件完成某个特定的工作，涉及到哪些属性、方法和事件。<br>
+3、用一用<br>
+    在实际开发中使用这个控件</p>
+<h1 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>使用容器控件布局窗体</h1>
+<h2 id="_3"><a name="user-content-_3" href="#_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>控件的激活与禁用</h2>
+<p>所有的控件都有一个Enable属性，通过设置其值为true或false可以激活或禁用特定的控件。</p>
+<h2 id="_4"><a name="user-content-_4" href="#_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>控件的显示与隐藏</h2>
+<p>Visible属性，当为true时显示，为false时隐藏。</p>
+<h2 id="_5"><a name="user-content-_5" href="#_5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>锚点的作用</h2>
+<p>Anchor属性可以是控件随窗体的大小，响应上下左右的变化。</p>
+<h2 id="dock"><a name="user-content-dock" href="#dock" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Dock的作用</h2>
+<p>Dock和Anchor有点像，不过它不是随窗体改变，而是随其父容器改变，并且可以设置响应的位置。</p>
+<h2 id="_6"><a name="user-content-_6" href="#_6" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>控件的容器</h2>
+<p>控件的容器是一种特殊的控件，它可以容纳多个“子”控件。<br>
+注意：顶层容器无法再放入另一个顶层容器中。（窗体可以看做是顶层容器）</p>
+<h2 id="_7"><a name="user-content-_7" href="#_7" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>几种容器介绍</h2>
+<p><img alt="" src="http://i11.tietuku.com/6945d9fe34314dca.jpg"><br>
+<img alt="" src="http://i11.tietuku.com/5e903d8368833794.jpg"><br>
+<img alt="" src="http://i11.tietuku.com/d4430bf69b454a43.jpg"><br>
+<img alt="" src="http://i11.tietuku.com/6e09f03b5a3a8dd4.jpg"><br>
+<img alt="" src="http://i11.tietuku.com/f6e2bb5ef2bd8e4d.jpg"></p></article></body></html></span>
       
     </div>
 
@@ -1260,829 +1367,43 @@ body .markdown-body
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/02/06/Windows-Form软件开发技术基础/" rel="next">Windows Form软件开发技术基础</a>
+            
+          </div>
+        </div>
+      
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2016/02/06/Windows-Form软件开发技术基础/" itemprop="url">
-                Windows Form软件开发技术基础
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2016-02-06T15:55:00+08:00" content="2016-02-06">
-            2016-02-06
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/C-笔记/" itemprop="url" rel="index">
-                  <span itemprop="name">C#笔记</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/02/06/Windows-Form软件开发技术基础/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/06/Windows-Form软件开发技术基础/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h1 id="使用Visual_Studio编写GUI程序">使用Visual Studio编写GUI程序</h1>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/02/06/Windows-Form软件开发技术基础/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
+    <div class="post-spread">
       
     </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2016/02/01/Csharp笔记之学习前的准备知识/" itemprop="url">
-                Csharp笔记之学习前的准备知识
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2016-02-01T19:45:36+08:00" content="2016-02-01">
-            2016-02-01
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/C-笔记/" itemprop="url" rel="index">
-                  <span itemprop="name">C#笔记</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/02/01/Csharp笔记之学习前的准备知识/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/01/Csharp笔记之学习前的准备知识/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h2 id="前言">前言</h2><p>C#以前看过视频，但是没有记过笔记，而且学到面向对象的封装、继承、多态、事件和委托后就没继续学了，像LINQ，C#调用SQL Server数据库，Windows Forms软件开发都没有接触，现在准备复习一遍，并且查漏补缺。所以拿了金旭亮老师的视频来系统的复习一遍。
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/02/01/Csharp笔记之学习前的准备知识/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2016/02/01/Csharp笔记之结构化编程基础/" itemprop="url">
-                Csharp笔记之结构化编程基础
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2016-02-01T19:43:50+08:00" content="2016-02-01">
-            2016-02-01
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/C-笔记/" itemprop="url" rel="index">
-                  <span itemprop="name">C#笔记</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/02/01/Csharp笔记之结构化编程基础/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/01/Csharp笔记之结构化编程基础/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h1 id="变量、数据类型与表达式">变量、数据类型与表达式</h1>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/02/01/Csharp笔记之结构化编程基础/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2016/01/13/Android通知栏Notification的用法/" itemprop="url">
-                Android通知栏Notification的用法
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2016-01-13T13:13:37+08:00" content="2016-01-13">
-            2016-01-13
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Android/" itemprop="url" rel="index">
-                  <span itemprop="name">Android</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/01/13/Android通知栏Notification的用法/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/13/Android通知栏Notification的用法/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>今天看到《第一行代码》的通知栏部分，发现他的方法已经过时了，官方推荐使用Notification.Builder而不是Notification类了，而在设置通知布局样式的时候也该了很多。但大体思路一致，都是使用了Notification类来设置通知和NotificationManager类来管理通知。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/01/13/Android通知栏Notification的用法/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2016/01/11/Service的start和bind启动服务/" itemprop="url">
-                Service的start和bind启动服务
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2016-01-11T15:42:53+08:00" content="2016-01-11">
-            2016-01-11
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Android练习/" itemprop="url" rel="index">
-                  <span itemprop="name">Android练习</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/01/11/Service的start和bind启动服务/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/11/Service的start和bind启动服务/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h2 id="start启动服务">start启动服务</h2><p><strong>功能：</strong>点击start按钮开启一个服务，点击stop按钮停止一个按钮。</p>
-<p><strong>代码：</strong><br>布局的xml<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/01/11/Service的start和bind启动服务/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/12/29/Android之数据存储/" itemprop="url">
-                Android之数据存储
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-12-29T16:55:38+08:00" content="2015-12-29">
-            2015-12-29
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Android练习/" itemprop="url" rel="index">
-                  <span itemprop="name">Android练习</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/12/29/Android之数据存储/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/29/Android之数据存储/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h1 id="前言">前言</h1><p>数据存储，说实话，从学习C的C#都没有注意过，一直到用unity做游戏的时候，突然意识到，我的数据都是临时的，我怎么把数据写到硬盘里，下次用的时候再去取呢？好吧，实在有些惭愧。这次学Android，终于和数据存储这个话题，面对面了。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/29/Android之数据存储/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/12/19/java字符流读取字符/" itemprop="url">
-                java字符流读取字符
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-12-19T16:40:36+08:00" content="2015-12-19">
-            2015-12-19
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Java练习/" itemprop="url" rel="index">
-                  <span itemprop="name">Java练习</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/12/19/java字符流读取字符/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/19/java字符流读取字符/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h3 id="java字符流读取字符">java字符流读取字符</h3><p>java字符流读取一个字符，我觉得没啥意义，还不如用字节流得了。字符流在字节流后出现，也是用于处理多行文字时方便吧。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/19/java字符流读取字符/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/12/19/java字节流读取字符/" itemprop="url">
-                java字节流读取字符
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-12-19T16:09:46+08:00" content="2015-12-19">
-            2015-12-19
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Java练习/" itemprop="url" rel="index">
-                  <span itemprop="name">Java练习</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/12/19/java字节流读取字符/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/19/java字节流读取字符/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h3 id="java字节流读取一个字符">java字节流读取一个字符</h3>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/19/java字节流读取字符/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/12/11/java中的super和重写/" itemprop="url">
-                java中的super和重写
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-12-11T22:08:28+08:00" content="2015-12-11">
-            2015-12-11
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Java遇到的问题/" itemprop="url" rel="index">
-                  <span itemprop="name">Java遇到的问题</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/12/11/java中的super和重写/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/11/java中的super和重写/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h2 id="出现的问题">出现的问题</h2><p>在<a href="http://demoniaccube.github.io/2015/12/11/Java实现打字母游戏/">Java实现打字母游戏</a>那篇文章里，遇到一个很奇怪的现象。在下雪代码的48行，如果去掉super，就像是下雨一样，且背景是灰色。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/11/java中的super和重写/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">&raquo;</a>
-  </nav>
+  </div>
 
  </div>
 
         
 
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="2016/02/07/Windows-Form软件开发技术基础/"
+                   data-title="" data-url="http://demoniaccube.github.io/2016/02/07/Windows-Form软件开发技术基础/">
+              </div>
+            
+          </div>
         
       </div>
 
@@ -2099,6 +1420,15 @@ body .markdown-body
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
 
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
       
 
       <section class="site-overview">
@@ -2160,6 +1490,17 @@ body .markdown-body
 
       </section>
 
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#visual-studiogui"><span class="nav-number">1.</span> <span class="nav-text">使用Visual Studio编写GUI程序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#windows"><span class="nav-number">1.1.</span> <span class="nav-text">编写windows窗体应用程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rad"><span class="nav-number">1.2.</span> <span class="nav-text">RAD</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#winform"><span class="nav-number">2.</span> <span class="nav-text">常用WinForm控件使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#button"><span class="nav-number">2.1.</span> <span class="nav-text">Button控件的几个属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#label"><span class="nav-number">2.2.</span> <span class="nav-text">Label控件的几个属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linklabel"><span class="nav-number">2.3.</span> <span class="nav-text">LinkLabel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#textbox"><span class="nav-number">2.4.</span> <span class="nav-text">TextBox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#radiobutton"><span class="nav-number">2.5.</span> <span class="nav-text">RadioButton</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#checkbox"><span class="nav-number">2.6.</span> <span class="nav-text">CheckBox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#progressbar"><span class="nav-number">2.7.</span> <span class="nav-text">ProgressBar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#timer"><span class="nav-number">2.8.</span> <span class="nav-text">Timer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#numericupdown"><span class="nav-number">2.9.</span> <span class="nav-text">NumericUpDown</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#picturebox"><span class="nav-number">2.10.</span> <span class="nav-text">PictureBox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#_1"><span class="nav-number">2.11.</span> <span class="nav-text">怎样学习一个新的控件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#_2"><span class="nav-number">3.</span> <span class="nav-text">使用容器控件布局窗体</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#_3"><span class="nav-number">3.1.</span> <span class="nav-text">控件的激活与禁用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#_4"><span class="nav-number">3.2.</span> <span class="nav-text">控件的显示与隐藏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#_5"><span class="nav-number">3.3.</span> <span class="nav-text">锚点的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dock"><span class="nav-number">3.4.</span> <span class="nav-text">Dock的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#_6"><span class="nav-number">3.5.</span> <span class="nav-text">控件的容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#_7"><span class="nav-number">3.6.</span> <span class="nav-text">几种容器介绍</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
       
 
     </div>
@@ -2244,6 +1585,165 @@ body .markdown-body
   <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
 
   <script type="text/javascript">
     $(document).ready(function () {

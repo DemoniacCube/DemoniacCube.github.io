@@ -39,16 +39,24 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="使用Visual Studio编写GUI程序常用WinForm控件使用使用容器控件布局窗体">
+<meta name="description" content="使用Visual Studio编写GUI程序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows Form软件开发技术基础">
 <meta property="og:url" content="http://demoniaccube.github.io/2016/02/06/Windows-Form软件开发技术基础/index.html">
 <meta property="og:site_name" content="Smallbo's Notes">
-<meta property="og:description" content="使用Visual Studio编写GUI程序常用WinForm控件使用使用容器控件布局窗体">
-<meta property="og:updated_time" content="2016-02-06T07:57:43.277Z">
+<meta property="og:description" content="使用Visual Studio编写GUI程序">
+<meta property="og:image" content="http://i11.tietuku.com/6945d9fe34314dca.jpg">
+<meta property="og:image" content="http://i11.tietuku.com/5e903d8368833794.jpg">
+<meta property="og:image" content="http://i11.tietuku.com/d4430bf69b454a43.jpg">
+<meta property="og:image" content="http://i11.tietuku.com/6e09f03b5a3a8dd4.jpg">
+<meta property="og:image" content="http://i11.tietuku.com/f6e2bb5ef2bd8e4d.jpg">
+<meta property="og:image" content="http://i11.tietuku.com/33c2854536ed8b94.jpg">
+<meta property="og:image" content="http://i11.tietuku.com/f189cb7eab2f266f.jpg">
+<meta property="og:image" content="http://i11.tietuku.com/1ea9f03308ac1258.jpg">
+<meta property="og:updated_time" content="2016-02-07T07:48:19.437Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows Form软件开发技术基础">
-<meta name="twitter:description" content="使用Visual Studio编写GUI程序常用WinForm控件使用使用容器控件布局窗体">
+<meta name="twitter:description" content="使用Visual Studio编写GUI程序">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -239,7 +247,29 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="使用Visual_Studio编写GUI程序">使用Visual Studio编写GUI程序</h1><h1 id="常用WinForm控件使用">常用WinForm控件使用</h1><h1 id="使用容器控件布局窗体">使用容器控件布局窗体</h1></span>
+        <span itemprop="articleBody"><h1 id="使用Visual_Studio编写GUI程序">使用Visual Studio编写GUI程序</h1><a id="more"></a>
+<h2 id="编写windows窗体应用程序">编写windows窗体应用程序</h2><p>选择，文件–&gt;新建项目–&gt;Visual C#–&gt;Windows–&gt;Windows窗体应用程序；<br>新建，Windows窗体应用程序；<br>工具箱中拖取控件，在属性中查看或更改属性；Name是控件的名称（在代码中需要引用），text是显示在窗体上的标题。</p>
+<p>一般地，双击控件可以编辑相应控件的代码。<br>另外，在解决方案的项目中可以打开Properties改变默认图标。如果图标没变，在项目上右击鼠标选择生成即可。</p>
+<h2 id="RAD">RAD</h2><p>像这样，具有“所见即所得”的特点，这种开发方式，被称为RAD（快速应用开发）模式。<br>而RAD开发方式，最适合于规模小，功能简单的带有“演示”性质的程序。不适合大型软件开发。</p>
+<h1 id="常用WinForm控件使用">常用WinForm控件使用</h1><h2 id="Button控件的几个属性">Button控件的几个属性</h2><p>1、Image：按钮上显示的图像（分为本地和已导入资源，两种都可以，导入资源适合重复利用的资源，导入资源在Properties的资源选项中添加）<br>窗体form没有Image，但是有BackgroundImage属性。<br>2、FlatAppearance：用于指示复选状态和鼠标状态的边框外观和颜色。<br>3、确定当用户将鼠标移动到控件上并单击时该控件的外观。</p>
+<h2 id="Label控件的几个属性">Label控件的几个属性</h2><p>1、Fond：字体样式<br>2、AutoSize：指定控件是否自动调整自身的大小一适应其内容的大小。（true时字的大小会根据控件大小自动调整）<br>3、backColor：组件的背景色，设置为web里的transparent可以使组件背景色透明。<br>4、Image：和按钮控件用法一样<br>5、TextAlign：设置字的位置（对齐方式）</p>
+<h2 id="LinkLabel">LinkLabel</h2><p>LinkLabel = Label + Button</p>
+<h2 id="TextBox">TextBox</h2><p>文本框控件主要用于提供用户输入，它是TextBox类的对象</p>
+<h2 id="RadioButton">RadioButton</h2><p>单选按钮</p>
+<h2 id="CheckBox">CheckBox</h2><p>复选按钮</p>
+<h2 id="ProgressBar">ProgressBar</h2><p>进度条属性：Maximum、minimum、Value（当前值）</p>
+<h2 id="Timer">Timer</h2><p>Enabled：“启动”或“停止”调用<br>Interval：每隔多长时间（毫秒）调用一次</p>
+<h2 id="NumericUpDown">NumericUpDown</h2><p>数字输入控件</p>
+<h2 id="PictureBox">PictureBox</h2><p>图片框</p>
+<h2 id="怎样学习一个新的控件">怎样学习一个新的控件</h2><p>1、问一问<br>    这个控件是干什么的？<br>    这个控件有哪些重要属性？<br>    这个控件有哪些特定的方法，触发哪些特定的事件？<br>2、玩一玩<br>    编写小的示例代码，分块掌握控件的各个功能。关键是玩明白：石笋这个控件完成某个特定的工作，涉及到哪些属性、方法和事件。<br>3、用一用<br>    在实际开发中使用这个控件</p>
+<h1 id="使用容器控件布局窗体">使用容器控件布局窗体</h1><h2 id="控件的激活与禁用">控件的激活与禁用</h2><p>所有的控件都有一个Enable属性，通过设置其值为true或false可以激活或禁用特定的控件。</p>
+<h2 id="控件的显示与隐藏">控件的显示与隐藏</h2><p>Visible属性，当为true时显示，为false时隐藏。</p>
+<h2 id="锚点的作用">锚点的作用</h2><p>Anchor属性可以是控件随窗体的大小，响应上下左右的变化。</p>
+<h2 id="Dock的作用">Dock的作用</h2><p>Dock和Anchor有点像，不过它不是随窗体改变，而是随其父容器改变，并且可以设置响应的位置。</p>
+<h2 id="控件的容器">控件的容器</h2><p>控件的容器是一种特殊的控件，它可以容纳多个“子”控件。<br>注意：顶层容器无法再放入另一个顶层容器中。（窗体可以看做是顶层容器）</p>
+<h2 id="几种容器介绍">几种容器介绍</h2><p><img src="http://i11.tietuku.com/6945d9fe34314dca.jpg" alt=""><br><img src="http://i11.tietuku.com/5e903d8368833794.jpg" alt=""><br><img src="http://i11.tietuku.com/d4430bf69b454a43.jpg" alt=""><br><img src="http://i11.tietuku.com/6e09f03b5a3a8dd4.jpg" alt=""><br><img src="http://i11.tietuku.com/f6e2bb5ef2bd8e4d.jpg" alt=""><br><img src="http://i11.tietuku.com/33c2854536ed8b94.jpg" alt=""><br><img src="http://i11.tietuku.com/f189cb7eab2f266f.jpg" alt=""><br><img src="http://i11.tietuku.com/1ea9f03308ac1258.jpg" alt=""></p>
+<h1 id="后记">后记</h1><p>WindowsForm并不是学习的重点，也并没考虑过要开发win软件，只是方便以后学习C#需要。2016年2月7日15:45:56距离年后面试一个月都不到了，得赶紧看Unity，学校做的项目还没开发完……唉~</p>
+</span>
       
     </div>
 
@@ -255,6 +285,8 @@
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/02/07/Windows-Form软件开发技术基础/" rel="prev"></a>
             
           </div>
 
@@ -326,7 +358,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">22</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -382,7 +414,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用Visual_Studio编写GUI程序"><span class="nav-number">1.</span> <span class="nav-text">使用Visual Studio编写GUI程序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用WinForm控件使用"><span class="nav-number">2.</span> <span class="nav-text">常用WinForm控件使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用容器控件布局窗体"><span class="nav-number">3.</span> <span class="nav-text">使用容器控件布局窗体</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用Visual_Studio编写GUI程序"><span class="nav-number">1.</span> <span class="nav-text">使用Visual Studio编写GUI程序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编写windows窗体应用程序"><span class="nav-number">1.1.</span> <span class="nav-text">编写windows窗体应用程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RAD"><span class="nav-number">1.2.</span> <span class="nav-text">RAD</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用WinForm控件使用"><span class="nav-number">2.</span> <span class="nav-text">常用WinForm控件使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Button控件的几个属性"><span class="nav-number">2.1.</span> <span class="nav-text">Button控件的几个属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Label控件的几个属性"><span class="nav-number">2.2.</span> <span class="nav-text">Label控件的几个属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LinkLabel"><span class="nav-number">2.3.</span> <span class="nav-text">LinkLabel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TextBox"><span class="nav-number">2.4.</span> <span class="nav-text">TextBox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RadioButton"><span class="nav-number">2.5.</span> <span class="nav-text">RadioButton</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CheckBox"><span class="nav-number">2.6.</span> <span class="nav-text">CheckBox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ProgressBar"><span class="nav-number">2.7.</span> <span class="nav-text">ProgressBar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Timer"><span class="nav-number">2.8.</span> <span class="nav-text">Timer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NumericUpDown"><span class="nav-number">2.9.</span> <span class="nav-text">NumericUpDown</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PictureBox"><span class="nav-number">2.10.</span> <span class="nav-text">PictureBox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎样学习一个新的控件"><span class="nav-number">2.11.</span> <span class="nav-text">怎样学习一个新的控件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用容器控件布局窗体"><span class="nav-number">3.</span> <span class="nav-text">使用容器控件布局窗体</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#控件的激活与禁用"><span class="nav-number">3.1.</span> <span class="nav-text">控件的激活与禁用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控件的显示与隐藏"><span class="nav-number">3.2.</span> <span class="nav-text">控件的显示与隐藏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#锚点的作用"><span class="nav-number">3.3.</span> <span class="nav-text">锚点的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dock的作用"><span class="nav-number">3.4.</span> <span class="nav-text">Dock的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控件的容器"><span class="nav-number">3.5.</span> <span class="nav-text">控件的容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#几种容器介绍"><span class="nav-number">3.6.</span> <span class="nav-text">几种容器介绍</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后记"><span class="nav-number">4.</span> <span class="nav-text">后记</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
