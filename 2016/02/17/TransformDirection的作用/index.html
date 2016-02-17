@@ -47,7 +47,7 @@
 <meta property="og:description" content="遇到的问题今天在用Character Controller的move写人物的移动时，参考了一下unity的api，遇到了一句这样的代码；moveDirection = transform.TransformDirection(moveDirection);transform.TransformDirection以前是见过的，文档上一笔带过，说是自身坐标到世界坐标变换方向，由于当时也没用到，也就没怎">
 <meta property="og:image" content="http://i12.tietuku.com/a6ba111a6e33c2ae.jpg">
 <meta property="og:image" content="http://i12.tietuku.com/d31a8a86a226735f.jpg">
-<meta property="og:updated_time" content="2016-02-17T09:55:27.988Z">
+<meta property="og:updated_time" content="2016-02-17T10:17:36.251Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TransformDirection的作用">
 <meta name="twitter:description" content="遇到的问题今天在用Character Controller的move写人物的移动时，参考了一下unity的api，遇到了一句这样的代码；moveDirection = transform.TransformDirection(moveDirection);transform.TransformDirection以前是见过的，文档上一笔带过，说是自身坐标到世界坐标变换方向，由于当时也没用到，也就没怎">
@@ -241,7 +241,7 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="遇到的问题">遇到的问题</h1><p>今天在用Character Controller的move写人物的移动时，参考了一下unity的api，遇到了一句这样的代码；<code>moveDirection = transform.TransformDirection(moveDirection);</code>transform.TransformDirection以前是见过的，文档上一笔带过，说是自身坐标到世界坐标变换方向，由于当时也没用到，也就没怎么注意，现在用到了倒有些棘手了，不知道这个函数到底返回的是什么值？</p>
+        <span itemprop="articleBody"><h1 id="遇到的问题">遇到的问题</h1><p>今天在用Character Controller的move写人物的移动时，参考了一下unity的api，遇到了一句这样的代码；<code>moveDirection = transform.TransformDirection(moveDirection);</code>transform.TransformDirection以前是见过的，文档上一笔带过，说是自身坐标到世界坐标变换方向，由于当时也没用到，也就没怎么注意，现在用到了倒有些棘手了，不知道这个函数到底返回的是什么值？<br><a id="more"></a></p>
 <h1 id="解决问题">解决问题</h1><h2 id="打印出来看看">打印出来看看</h2><p>既然不知道返回的是什么值，那么我们就打印出来看看呗。<br>当然咯，既然文档已经说了是自身坐标到世界坐标变换方向，那么就应该设置一些特殊条件，这样容易看出来。<br>这里我在场景中只放了一个红色cube，然后Y轴旋转180°，这样cube自身坐标的X、Z轴就恰好和世界坐标的X、Z轴相反。然后我们打印cube自身的Z轴方向以及TransformDirection的Z轴方向。<br><img src="http://i12.tietuku.com/a6ba111a6e33c2ae.jpg" alt=""></p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Debug.Log(<span class="string">"转换后的向量"</span>+<span class="keyword">this</span>.transform.TransformDirection(<span class="keyword">this</span>.transform.forward));</span><br><span class="line">Debug.Log(<span class="string">"自身的原来的向量"</span>+<span class="keyword">this</span>.transform.forward);</span><br></pre></td></tr></table></figure>
 <p>结果：<br><img src="http://i12.tietuku.com/d31a8a86a226735f.jpg" alt=""></p>
